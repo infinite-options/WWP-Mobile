@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:Forms9Patch="clr-namespace:Forms9Patch;assembly=Forms9Patch"
+    x:Class="WWP.ViewModel.ProfileHobbies">
+    <ContentPage.Content>
+
+        <ScrollView>
+            <StackLayout>
+                <BoxView x:Name="headingBuffer" HeightRequest="20"/>
+            <Grid>
+            <StackLayout x:Name="mainStack">
+
+                <Grid x:Name="headerGrid" Margin="20, 0, 20, 10" HeightRequest="40">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <ImageButton Source="back.png" BackgroundColor="Transparent" HorizontalOptions="Start" HeightRequest="25" Clicked="backClicked"/>
+                    <ImageButton x:Name="menu" BackgroundColor="Transparent" Grid.Column="1" Source="menu.png" HorizontalOptions="End" VerticalOptions="Center" HeightRequest="25" WidthRequest="50"/>
+                    <BoxView x:Name="whiteCover" IsVisible="false" BackgroundColor="White" HorizontalOptions="Fill" VerticalOptions="Fill" Grid.Column="0" Grid.ColumnSpan="2"/>
+                </Grid>
+
+                <Label FontSize="24" HorizontalOptions="Center" HorizontalTextAlignment="Center" Text="Your Profile" Margin="0, 20"/>
+
+                <Frame BorderColor="#F87F1B" CornerRadius="20" Margin="10" Padding="10" HasShadow="False">
+                    <StackLayout>
+                        <Grid>
+                        <Frame x:Name="customHobby" Padding="10,14,10,10" Margin="10" BackgroundColor="White" HasShadow="False"
+                            BorderColor="Black" CornerRadius="25" HeightRequest="30">
+                            <Entry x:Name="customHobbyEntry" VerticalOptions="Center" FontAttributes="Bold" VerticalTextAlignment="Center"
+                                   TextColor="Black" FontSize="18" Placeholder="Type a hobby you dont see" PlaceholderColor="#4E4E4E" Margin="10,0,10,10"/>
+
+                        </Frame>
+                        <Button BackgroundColor="#F87F1B" Clicked="addClicked" HeightRequest="40" CornerRadius="20" WidthRequest="70"
+                                VerticalOptions="Center" HorizontalOptions="End" Margin="0,0,20,0" TextColor="Black" FontAttributes="Bold" Text="Add"/>
+                        </Grid>
+
+                        <CollectionView x:Name="hobbyCollView" Margin="0, 15,0,0" HorizontalOptions="Fill">
+                            <CollectionView.ItemsLayout>
+                                <GridItemsLayout Orientation="Vertical" Span="3" SnapPointsType="None" HorizontalItemSpacing="10" VerticalItemSpacing="10"/>
+                            </CollectionView.ItemsLayout>
+                            <CollectionView.ItemTemplate>
+                                <DataTemplate>
+                                    <!--<Button HeightRequest="40" Text="{Binding name}" CornerRadius="20" Padding="5,0"
+                                            TextColor="Black" FontSize="15" FontAttributes="Bold" BackgroundColor="{Binding bgColor}"/>-->
+                                    <Forms9Patch:Button HeightRequest="40" Text="{Binding name}" BorderRadius="20" Padding="15,0"
+                                            TextColor="Black" FontAttributes="Bold" BackgroundColor="{Binding bgColor}" Clicked="hobbyClicked"/>
+                                </DataTemplate>
+                            </CollectionView.ItemTemplate>
+                        </CollectionView>
+
+                        <ImageButton Source="addHobbiesButton.png" Margin="60,-100,60,30" HorizontalOptions="Center"/>
+                    </StackLayout>
+                </Frame>
+
+                <ImageButton Source="nextButton.png" Margin="80,30,80,50" HorizontalOptions="Center" Clicked="nextClicked"/>
+
+                <BoxView HeightRequest="60"/>
+            </StackLayout>
+
+            </Grid>
+            </StackLayout>
+        </ScrollView>
+
+    </ContentPage.Content>
+</ContentPage>

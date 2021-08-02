@@ -1871,7 +1871,7 @@ namespace WWP
 
         async void clickedWalkieProfile(object sender, EventArgs e)
         {
-            Application.Current.MainPage = new WalkieProfile();
+            Application.Current.MainPage = new NavigationPage(new WalkieProfile());
         }
     }
 }

@@ -26,7 +26,8 @@ namespace WWP.ViewModel
 
         void hobbyClicked(object sender, EventArgs e)
         {
-            Application.Current.MainPage = new ProfileHobbies();
+            Navigation.PushAsync(new ProfileHobbies());
+            //Application.Current.MainPage = new ProfileHobbies();
         }
     }
 }

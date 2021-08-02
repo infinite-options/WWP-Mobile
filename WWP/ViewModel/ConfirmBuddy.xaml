@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="WWP.ViewModel.ConfirmBuddy">
+    <ContentPage.Content>
+
+        <ScrollView>
+            <StackLayout>
+                <BoxView x:Name="headingBuffer" HeightRequest="20"/>
+            <Grid>
+            <StackLayout x:Name="mainStack">
+
+                <Grid x:Name="headerGrid" Margin="20, 0, 20, 10" HeightRequest="40">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <ImageButton Source="back.png" BackgroundColor="Transparent" HorizontalOptions="Start" HeightRequest="25" Clicked="backClicked"/>
+                    <ImageButton x:Name="menu" BackgroundColor="Transparent" Grid.Column="1" Source="menu.png" HorizontalOptions="End" VerticalOptions="Center" HeightRequest="25" WidthRequest="50"/>
+                    <BoxView x:Name="whiteCover" IsVisible="false" BackgroundColor="White" HorizontalOptions="Fill" VerticalOptions="Fill" Grid.Column="0" Grid.ColumnSpan="2"/>
+                </Grid>
+
+                <Label FontSize="24" HorizontalOptions="Center" HorizontalTextAlignment="Center" Text="Confirm your Walk Buddy" Margin="0, 20,0,20"/>
+
+                <Grid HeightRequest="128" Margin="10,5,10,25">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="128"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Image Source="profileBackground.png" Grid.RowSpan="2" Grid.ColumnSpan="2" HorizontalOptions="Fill" VerticalOptions="Fill"/>
+
+                    <ImageButton BackgroundColor="LightGray" HorizontalOptions="Start" WidthRequest="128" HeightRequest="128" CornerRadius="30" Grid.RowSpan="2" VerticalOptions="Fill"/>
+
+                    <Label Grid.Column="1" x:Name="name" Text="John Doe" Margin="20,0,20,3" FontSize="18" FontAttributes="Bold" HorizontalOptions="Start" VerticalOptions="End"/>
+                    <Image Grid.Column="1" Source="rightArrow.png" Margin="0,0,25,0" HorizontalOptions="End" HeightRequest="25" VerticalOptions="End"/>
+
+                    <Grid Grid.Column="1" Grid.Row="1" Margin="20,5,20,0" VerticalOptions="Start">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*"/> <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/> <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/> <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Image Source="SatGray.png" HorizontalOptions="Fill" VerticalOptions="Start"/>
+                        <Image Grid.Column="1" Source="MonGray.png" HorizontalOptions="Fill" VerticalOptions="Start"/>
+                        <Image Grid.Column="2" Source="TuesGray.png" HorizontalOptions="Fill" VerticalOptions="Start"/>
+                        <Image Grid.Column="3" Source="WedGray.png" HorizontalOptions="Fill" VerticalOptions="Start"/>
+                        <Image Grid.Column="4" Source="TuesGray.png" HorizontalOptions="Fill" VerticalOptions="Start"/>
+                        <Image Grid.Column="5" Source="FriGray.png" HorizontalOptions="Fill" VerticalOptions="Start"/>
+                        <Image Grid.Column="6" Source="SatGray.png" HorizontalOptions="Fill" VerticalOptions="Start"/>
+
+                    </Grid>
+
+                </Grid>
+
+
+
+            </StackLayout>
+            </Grid>
+            </StackLayout>
+        </ScrollView>
+
+    </ContentPage.Content>
+</ContentPage>

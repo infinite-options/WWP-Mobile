@@ -10,6 +10,7 @@ namespace WWP.ViewModel
     public partial class ProfileHobbies : ContentPage
     {
         public ObservableCollection<Hobbies> hobbiesObsColl = new ObservableCollection<Hobbies>();
+        public ObservableCollection<Hobbies> selectedHobbiesColl = new ObservableCollection<Hobbies>();
 
         public ProfileHobbies()
         {
@@ -62,12 +63,14 @@ namespace WWP.ViewModel
 
         void backClicked(object sender, EventArgs e)
         {
-            Application.Current.MainPage = new WalkieProfile();
+            Navigation.PopAsync();
+            //Application.Current.MainPage = new WalkieProfile();
         }
 
         void nextClicked(object sender, EventArgs e)
         {
-            Application.Current.MainPage = new ProfileSummary();
+            Navigation.PushAsync(new ProfileSummary(selectedHobbiesColl));
+            //Application.Current.MainPage = new ProfileSummary(selectedHobbiesColl);
         }
 
         void addClicked(object sender, EventArgs e)
@@ -85,13 +88,34 @@ namespace WWP.ViewModel
             }
         }
 
+        void addSelectedClicked(object sender, EventArgs e)
+        {
+            foreach (Hobbies hobby in hobbiesObsColl)
+            {
+                if (hobby.bgColor == Color.FromHex("#FEF2EA") && selectedHobbiesColl.Contains(hobby) == false)
+                {
+                   selectedHobbiesColl.Add(hobby);
+                }
+            }
+        }
+
         void hobbyClicked(object sender, EventArgs e)
         {
             Forms9Patch.Button button1 = (Forms9Patch.Button)sender;
             Hobbies selectedHobby = button1.BindingContext as Hobbies;
             if (selectedHobby.bgColor == Color.FromHex("#C9E4FF"))
+            {
                 selectedHobby.bgColor = Color.FromHex("#FEF2EA"); //selected light orange
-            else selectedHobby.bgColor = Color.FromHex("#C9E4FF"); //unselected blue
+                //selectedHobbiesColl.Add(selectedHobby);
+            }
+            else
+            {
+                selectedHobby.bgColor = Color.FromHex("#C9E4FF"); //unselected blue
+                //selectedHobbiesColl.Remove(selectedHobby);
+            }
+                
+
+
         }
     }
 }

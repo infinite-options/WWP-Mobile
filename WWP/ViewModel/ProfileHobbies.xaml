@@ -35,7 +35,7 @@
 
                         </Frame>
                         <Button BackgroundColor="#F87F1B" Clicked="addClicked" HeightRequest="40" CornerRadius="20" WidthRequest="70"
-                                VerticalOptions="Center" HorizontalOptions="End" Margin="0,0,20,0" TextColor="Black" FontAttributes="Bold" Text="Add"/>
+                                VerticalOptions="Center" HorizontalOptions="End" Margin="0,0,20,0" TextColor="White" FontAttributes="Bold" Text="Add"/>
                         </Grid>
 
                         <CollectionView x:Name="hobbyCollView" Margin="0, 15,0,0" HorizontalOptions="Fill">
@@ -52,7 +52,7 @@
                             </CollectionView.ItemTemplate>
                         </CollectionView>
 
-                        <ImageButton Source="addHobbiesButton.png" Margin="60,-100,60,30" HorizontalOptions="Center"/>
+                        <ImageButton Source="addHobbiesButton.png" Clicked="addSelectedClicked" Margin="60,-100,60,30" HorizontalOptions="Center"/>
                     </StackLayout>
                 </Frame>
 

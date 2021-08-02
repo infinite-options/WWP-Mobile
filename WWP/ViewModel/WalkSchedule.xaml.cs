@@ -1,15 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using WWP.Model;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace WWP.ViewModel
 {
-    public partial class ProfileSummary : ContentPage
+    public partial class WalkSchedule : ContentPage
     {
-        public ProfileSummary(ObservableCollection<Hobbies> hobbyColl)
+        public WalkSchedule()
         {
             NavigationPage.SetHasBackButton(this, false);
             NavigationPage.SetHasNavigationBar(this, false);
@@ -19,21 +17,18 @@ namespace WWP.ViewModel
             Console.WriteLine("Height = " + height.ToString());
 
             InitializeComponent();
-
-            hobbyCollView.HeightRequest = 80 * ((hobbyColl.Count / 3) + 1);
-            hobbyCollView.ItemsSource = hobbyColl;
         }
 
         void backClicked(object sender, EventArgs e)
         {
             Navigation.PopAsync();
-            //Application.Current.MainPage = new ProfileHobbies();
+            //Application.Current.MainPage = new ProfileSummary();
         }
 
-        void startClicked(object sender, EventArgs e)
+        void buddyClicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new WalkSchedule());
-            //Application.Current.MainPage = new WalkSchedule();
+            Navigation.PushAsync(new PickABuddy());
+            //Application.Current.MainPage = new ProfileSummary();
         }
     }
 }

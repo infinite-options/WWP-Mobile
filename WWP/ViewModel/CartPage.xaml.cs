@@ -131,7 +131,7 @@ namespace WWP.ViewModel
 
         void NavigateToCheckoutPage(System.Object sender, System.EventArgs e)
         {
-            Navigation.PushAsync(new ClientIntakeForm(), false);
+            //Navigation.PushAsync(new ClientIntakeForm(), false);
         }
 
         void backClicked(System.Object sender, System.EventArgs e)

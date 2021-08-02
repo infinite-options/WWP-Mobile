@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="WWP.ViewModel.WalkSchedule">
+    <ContentPage.Content>
+
+            <Grid VerticalOptions="Fill" Margin="0,60,0,0" Padding="0">
+            <StackLayout x:Name="mainStack" Padding="0">
+
+                <Grid x:Name="headerGrid" Margin="20, 0, 20, 10" HeightRequest="40">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Text="Upcoming Walks" VerticalOptions="Center" VerticalTextAlignment="Center" FontSize="22" FontAttributes="Bold" TextColor="#F87F1B" Grid.ColumnSpan="2" HorizontalOptions="Center" HorizontalTextAlignment="Center"/> 
+                    <ImageButton IsVisible="False" Source="back.png" BackgroundColor="Transparent" HorizontalOptions="Start" HeightRequest="25" Clicked="backClicked"/>
+                    <ImageButton x:Name="menu" BackgroundColor="Transparent" Grid.Column="1" Source="menu.png" HorizontalOptions="End" VerticalOptions="Center" HeightRequest="25" WidthRequest="50"/>
+                </Grid>
+
+                <StackLayout x:Name="noWalksStack">
+                    <Label Margin="0,50,0,50" Text="No walks scheduled" FontAttributes="Bold" FontSize="22" TextColor="Black" HorizontalTextAlignment="Center"/>
+
+                    <Image Source="mainBackground.png" HeightRequest="167" HorizontalOptions="Center"/>
+
+                    <Label Text="Pick one of the&#10;options below to&#10;get started!" FontAttributes="Bold" Margin="0,30,0,0" TextColor="#F87F1B" FontSize="22" HorizontalTextAlignment="Center"/>
+                </StackLayout>
+
+                
+
+            </StackLayout>
+
+                <Grid Padding="0" VerticalOptions="End" RowSpacing="0"> 
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40"/>
+                        <RowDefinition Height="110"/>
+                    </Grid.RowDefinitions>
+
+                    <Grid Grid.ColumnSpan="2" Margin="0,0,0,0">
+                        <BoxView BackgroundColor="#FFF2EA" VerticalOptions="Fill" HorizontalOptions="Fill"/>
+                        <Label HorizontalOptions="Fill" VerticalOptions="Fill" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Text="Plan your next walk"
+                            FontSize="14" TextColor="Black" FontAttributes="Bold"/>
+                    </Grid>
+                    
+
+                    <ImageButton Clicked="buddyClicked" BackgroundColor="Transparent" Margin="-15,0,0,0" Source="pickBuddyButton.png" Grid.Row="1" VerticalOptions="Fill" HorizontalOptions="Start"/>
+                    <ImageButton BackgroundColor="Transparent" Margin="0,0,-15,0" Source="pickDateButton.png" Grid.Row="1" Grid.Column="1" VerticalOptions="Fill" HorizontalOptions="End"/>
+
+                </Grid>
+
+            </Grid>
+
+    </ContentPage.Content>
+</ContentPage>

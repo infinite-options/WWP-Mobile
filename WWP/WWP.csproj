@@ -65,9 +65,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Update="ViewModel\OldMealSched.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
     <EmbeddedResource Update="ViewModel\PaymentPage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>

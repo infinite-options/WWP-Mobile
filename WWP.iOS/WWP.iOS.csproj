@@ -184,5 +184,19 @@
     <BundleResource Include="Resources\menu.png" />
     <BundleResource Include="Resources\addHobbiesButton.png" />
     <BundleResource Include="Resources\nextButton.png" />
+    <BundleResource Include="Resources\startedButton.png" />
+    <BundleResource Include="Resources\pickBuddyButton.png" />
+    <BundleResource Include="Resources\pickDateButton.png" />
+    <BundleResource Include="Resources\FriGray.png" />
+    <BundleResource Include="Resources\FriOrange.png" />
+    <BundleResource Include="Resources\MonGray.png" />
+    <BundleResource Include="Resources\MonOrange.png" />
+    <BundleResource Include="Resources\rightArrow.png" />
+    <BundleResource Include="Resources\SatGray.png" />
+    <BundleResource Include="Resources\SatOrange.png" />
+    <BundleResource Include="Resources\TuesGray.png" />
+    <BundleResource Include="Resources\TuesOrange.png" />
+    <BundleResource Include="Resources\WedGray.png" />
+    <BundleResource Include="Resources\WedOrange.png" />
   </ItemGroup>
 </Project>

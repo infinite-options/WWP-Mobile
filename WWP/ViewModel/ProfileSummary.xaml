@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" encoding="UTF-8" ?>
 <ContentPage
     xmlns="http://xamarin.com/schemas/2014/forms"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:Forms9Patch="clr-namespace:Forms9Patch;assembly=Forms9Patch"
     x:Class="WWP.ViewModel.ProfileSummary">
     <ContentPage.Content>
 
         <ScrollView>
             <StackLayout>
-                <BoxView x:Name="headingBuffer" HeightRequest="60"/>
+                <BoxView x:Name="headingBuffer" HeightRequest="20"/>
             <Grid>
             <StackLayout x:Name="mainStack">
 
@@ -74,10 +74,27 @@
 
                 <BoxView HeightRequest="1" Margin="15,0" Color="#F87F1B" HorizontalOptions="Fill"/>
 
-                <Label Text="Hobbies and Interests:" FontAttributes="Bold" TextColor="#F87F1B" FontSize="16" Margin="35,10,0,5" HorizontalOptions="Start"/>
+                <Label Text="Hobbies and Interests:" FontAttributes="Bold" TextColor="#F87F1B" FontSize="16" Margin="35,15,0,5" HorizontalOptions="Start"/>
 
+                <CollectionView x:Name="hobbyCollView" Margin="16, 0,16,0" HorizontalOptions="Fill">
+                    <CollectionView.ItemsLayout>
+                        <GridItemsLayout Orientation="Vertical" Span="3" SnapPointsType="None" HorizontalItemSpacing="10" VerticalItemSpacing="10"/>
+                    </CollectionView.ItemsLayout>
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <!--<Button HeightRequest="40" Text="{Binding name}" CornerRadius="20" Padding="5,0"
+                                    TextColor="Black" FontSize="15" FontAttributes="Bold" BackgroundColor="{Binding bgColor}"/>-->
+                            <Forms9Patch:Button HeightRequest="40" Text="{Binding name}" BorderRadius="20" Padding="15,0"
+                                    TextColor="Black" FontAttributes="Bold" BackgroundColor="{Binding bgColor}"/>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
 
+                <BoxView HeightRequest="1" Margin="15,0" Color="#F87F1B" HorizontalOptions="Fill"/>
 
+                <ImageButton Source="startedButton.png" Margin="80,30,80,50" Clicked="startClicked" HorizontalOptions="Center"/>
+
+                <BoxView HeightRequest="60"/>
             </StackLayout>
             </Grid>
             </StackLayout>

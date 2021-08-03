@@ -198,5 +198,7 @@
     <BundleResource Include="Resources\TuesOrange.png" />
     <BundleResource Include="Resources\WedGray.png" />
     <BundleResource Include="Resources\WedOrange.png" />
+    <BundleResource Include="Resources\confirmButton.png" />
+    <BundleResource Include="Resources\completePayButton.png" />
   </ItemGroup>
 </Project>

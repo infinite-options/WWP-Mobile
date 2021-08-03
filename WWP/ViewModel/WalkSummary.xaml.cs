@@ -1,17 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using WWP.Model;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace WWP.ViewModel
 {
-    public partial class ConfirmBuddy : ContentPage
+    public partial class WalkSummary : ContentPage
     {
-        ObservableCollection<Hobbies> hobbiesObsColl = new ObservableCollection<Hobbies>();
-
-        public ConfirmBuddy()
+        public WalkSummary()
         {
             NavigationPage.SetHasBackButton(this, false);
             NavigationPage.SetHasNavigationBar(this, false);
@@ -22,8 +18,6 @@ namespace WWP.ViewModel
 
             InitializeComponent();
 
-            hobbyCollView.HeightRequest = 80 * ((hobbiesObsColl.Count / 3) + 1);
-            hobbyCollView.ItemsSource = hobbiesObsColl;
         }
 
         void backClicked(object sender, EventArgs e)
@@ -32,9 +26,9 @@ namespace WWP.ViewModel
             //Application.Current.MainPage = new ProfileSummary();
         }
 
-        void confirmClicked(object sender, EventArgs e)
+        void completeClicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new WalkSummary());
+            //Navigation.PushAsync();
             //Application.Current.MainPage = new ProfileSummary();
         }
     }

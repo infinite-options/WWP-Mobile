@@ -77,18 +77,18 @@ namespace WWP.ViewModel
                 build = DependencyService.Get<IAppVersionAndBuild>().GetBuildNumber();
 
 
-                var cvItems = new List<string>
-            {
-                "Who has time?\n\nSave time and money! Ready to heat meals come to your door and you can order up to 10 deliveries in advance so you know what's coming!",
-                "Food when you're hungry\n\nIf you order food when you're hungry, you're starving by the time it arrives! With MealsFor.Me there is always something in the fridge and your next meals are in route!",
-                "Better Value\n\nYou get restaurant quality food at a fraction of the cost plus it is made from the highest quality ingredients by exceptional Chefs."
-            };
+            //    var cvItems = new List<string>
+            //{
+            //    "Who has time?\n\nSave time and money! Ready to heat meals come to your door and you can order up to 10 deliveries in advance so you know what's coming!",
+            //    "Food when you're hungry\n\nIf you order food when you're hungry, you're starving by the time it arrives! With MealsFor.Me there is always something in the fridge and your next meals are in route!",
+            //    "Better Value\n\nYou get restaurant quality food at a fraction of the cost plus it is made from the highest quality ingredients by exceptional Chefs."
+            //};
                 //TheCarousel.ItemsSource = cvItems;
 
                 store = AccountStore.Create();
 
                 checkPlatform(height, width);
-                setGrid();
+                //setGrid();
                 // BackgroundImageSource = "new_background.png";
 
                 // APPLE
@@ -127,26 +127,6 @@ namespace WWP.ViewModel
 
         private void checkPlatform(double height, double width)
         {
-            orangeBox.HeightRequest = height / 2.3;
-            //orangeBox.Margin = new Thickness(0, - orangeBox.HeightRequest + (height * 0.075), 0, 0);
-            orangeBox.Margin = new Thickness(0, -height / 2.2, 0, 0);
-            orangeBox.CornerRadius = height / 40;
-            heading.WidthRequest = 140;
-
-            pfp.HeightRequest = 40;
-            pfp.WidthRequest = 40;
-            pfp.CornerRadius = 20;
-            pfp.Margin = new Thickness(0, 0, 23, 27);
-            innerGrid.Margin = new Thickness(0, 0, 23, 27);
-
-            if (Preferences.Get("profilePicLink", "") == "")
-            {
-                string userInitials = "";
-                initials.Text = "MM";
-                initials.FontSize = width / 38;
-            }
-            else pfp.Source = Preferences.Get("profilePicLink", "");
-
             //if (Preferences.Get("profilePicLink", "") == "")
             //{
             //    string userInitials = "";
@@ -163,8 +143,6 @@ namespace WWP.ViewModel
             //}
             //else pfp.Source = Preferences.Get("profilePicLink", "");
 
-            menu.Margin = new Thickness(25, 0, 0, 30);
-            menu.HeightRequest = 25;
             //menu.WidthRequest = 40;
 
             if (width == 1125 && height == 2436) //iPhone X only
@@ -212,16 +190,6 @@ namespace WWP.ViewModel
             else //android
             {
                 Xamarin.Forms.NavigationPage.SetHasNavigationBar(this, false);
-                orangeBox.HeightRequest = height / 2;
-                orangeBox.Margin = new Thickness(0, -height / 2.2, 0, 0);
-                orangeBox.CornerRadius = height / 40;
-                heading.WidthRequest = 140;
-
-                pfp.HeightRequest = 40;
-                pfp.WidthRequest = 40;
-                pfp.CornerRadius = 20;
-                pfp.Margin = new Thickness(0, 0, 23, 27);
-                innerGrid.Margin = new Thickness(0, 0, 23, 27);
 
                 userFrame.HeightRequest = 42;
                 passFrame.HeightRequest = 42;
@@ -297,118 +265,18 @@ namespace WWP.ViewModel
             }
         }
 
-        private void checkLandingPlatform(double height, double width)
-        {
-            Xamarin.Forms.NavigationPage.SetHasNavigationBar(this, false);
-            orangeBox.HeightRequest = height / 2;
-            orangeBox.Margin = new Thickness(0, -height / 2.2, 0, 0);
-            orangeBox.CornerRadius = height / 40;
-            //logo.HeightRequest = width / 15;
-            //logo.Margin = new Thickness(0, 0, 0, 30);
-            //innerGrid.Margin = new Thickness(0, 0, 23, 27);
-            heading.WidthRequest = 140;
-
-            menu.Margin = new Thickness(25, 0, 0, 30);
-            menu.WidthRequest = 25;
-            //menu.Margin = new Thickness(25, 0, 0, 30);
-
-            if (Preferences.Get("profilePicLink", "") == "")
-            {
-                string userInitials = "";
-                initials.Text = "MM";
-                initials.FontSize = width / 38;
-            }
-            else pfp.Source = Preferences.Get("profilePicLink", "");
-
-            //landingPic.Margin = new Thickness(0, -height / 30, 0, 0);
-
-            //partners.FontSize = width / 60;
-
-            //ambassadorBtn.WidthRequest = width / 4;
-            //ambassadorBtn.HeightRequest = width / 20;
-            //ambassadorBtn.CornerRadius = (int)(width / 40);
-
-            if (Device.RuntimePlatform == Device.iOS)
-            {
-
-                //pfp.HeightRequest = 40;
-                //pfp.WidthRequest = 40;
-                //pfp.CornerRadius = 20;
-
-                //mainLogo.HeightRequest = height / 18;
-                //getStarted.HeightRequest = height / 35;
-                //getStarted.CornerRadius = (int)(height / 70);
-                //getStarted.Margin = new Thickness(width / 7, 0);
-
-                //fade.Margin = new Thickness(0, -height / 3, 0, 0);
-
-                //xButton.FontSize = width / 37;
-                //DiscountGrid.Margin = new Thickness(width / 30, height / 9, width / 30, 0);
-                //DiscountGrid.HeightRequest = height / 4.5;
-                //DiscountGrid.WidthRequest = width / 2.3;
-                //couponGrid.HeightRequest = height / 4.5;
-                //couponGrid.WidthRequest = width / 2.3;
-
-                //outerFrame.HeightRequest = height / 4.5;
-
-                //discHeader.FontSize = width / 35;
-
-                //couponGrid.HeightRequest = height / 30;
-                //couponImg.HeightRequest = height / 30;
-                //couponAmt.FontSize = width / 50;
-                //couponDesc.FontSize = width / 50;
-
-                //couponGrid2.HeightRequest = height / 30;
-                //couponImg2.HeightRequest = height / 30;
-                //couponAmt2.FontSize = width / 50;
-                //couponDesc2.FontSize = width / 50;
-
-                //couponGrid3.HeightRequest = height / 30;
-                //couponImg3.HeightRequest = height / 30;
-                //couponAmt3.FontSize = width / 50;
-                //couponDesc3.FontSize = width / 50;
-            }
-            else //Android
-            {
-
-                //mainLogo.HeightRequest = height / 20;
-                //getStarted.HeightRequest = height / 45;
-                //getStarted.CornerRadius = (int)(height / 90);
-                //getStarted.Margin = new Thickness(width / 10, 0);
-
-                //fade.Margin = new Thickness(0, -height / 3, 0, 0);
-
-                //xButton.WidthRequest = width / 40;
-                //xButton.FontSize = width / 50;
-                //DiscountGrid.Margin = new Thickness(width / 30, height / 9, width / 30, 0);
-                //DiscountGrid.HeightRequest = height / 6.5;
-                //DiscountGrid.WidthRequest = width / 2.3;
-
-                //outerFrame.HeightRequest = height / 6.5;
-
-                //discHeader.FontSize = width / 50;
-
-                //couponGrid.HeightRequest = height / 30;
-                //couponImg.HeightRequest = height / 40;
-                //couponAmt.FontSize = width / 60;
-                //couponDesc.FontSize = width / 60;
-
-                //couponGrid2.HeightRequest = height / 30;
-                //couponImg2.HeightRequest = height / 40;
-                //couponAmt2.FontSize = width / 60;
-                //couponDesc2.FontSize = width / 60;
-
-                //couponGrid3.HeightRequest = height / 30;
-                //couponImg3.HeightRequest = height / 40;
-                //couponAmt3.FontSize = width / 60;
-                //couponDesc3.FontSize = width / 60;
-            }
-        }
-
         async void clickedWeeksMeals(object sender, EventArgs e)
         {
             Application.Current.MainPage = new ThisWeeksMeals();
         }
+
+        //temporary login clicked for testing
+        void loginButtonClicked(object sender, EventArgs e)
+        {
+            Application.Current.MainPage = new NavigationPage(new WalkSchedule());
+        }
+
+
 
         // DIRECT LOGIN CLICK
         private async void clickedLogin(object sender, EventArgs e)
@@ -1674,6 +1542,11 @@ namespace WWP.ViewModel
         {
             Preferences.Set("canChooseSelect", false);
             Application.Current.MainPage = new CarlosSignUp();
+        }
+
+        void signUpClicked(object sender, EventArgs e)
+        {
+            Application.Current.MainPage = new SignUpOptions();
         }
 
         async void clickedForgotPass(System.Object sender, System.EventArgs e)

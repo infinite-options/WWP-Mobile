@@ -27,7 +27,43 @@
                     <Label Text="Pick one of the&#10;options below to&#10;get started!" FontAttributes="Bold" Margin="0,30,0,0" TextColor="#F87F1B" FontSize="22" HorizontalTextAlignment="Center"/>
                 </StackLayout>
 
-                
+                <CollectionView x:Name="schedule" Margin="10, 15" HeightRequest="200" ItemsSource="{Binding availableDates}" VerticalOptions="Fill" HorizontalOptions="Fill">
+                    <CollectionView.ItemsLayout>
+                        <GridItemsLayout Orientation="Vertical"  SnapPointsType="None" HorizontalItemSpacing="0"/>
+                    </CollectionView.ItemsLayout>
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout>
+
+                                <Grid HeightRequest="50" Margin="20,0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="1*"/>
+                                        <ColumnDefinition Width="1*"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <Label x:Name="day" Text="Today" TextColor="Black" HorizontalTextAlignment="Start" FontSize="16"/>
+                                    <Label x:Name="date" Grid.Column="1" Text="Friday, June 29" TextColor="#F87F1B" HorizontalTextAlignment="End" FontSize="16"/>
+                                </Grid>
+
+                                <CollectionView>
+                                    <CollectionView.ItemsLayout>
+                                        <GridItemsLayout Orientation="Vertical"  SnapPointsType="None" HorizontalItemSpacing="10"/>
+                                    </CollectionView.ItemsLayout>
+                                    <CollectionView.ItemTemplate>
+                                        <DataTemplate>
+
+                                            <BoxView HorizontalOptions="Fill" Margin="5, 0" HeightRequest="100" CornerRadius="30"/>
+
+                                        </DataTemplate>
+                                    </CollectionView.ItemTemplate>
+                                </CollectionView>
+
+                            </StackLayout>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+
+                <Button WidthRequest="200" HeightRequest="50" HorizontalOptions="Center" BackgroundColor="Orange" VerticalOptions="End"/>
 
             </StackLayout>
 

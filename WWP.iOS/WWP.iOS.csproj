@@ -200,5 +200,15 @@
     <BundleResource Include="Resources\WedOrange.png" />
     <BundleResource Include="Resources\confirmButton.png" />
     <BundleResource Include="Resources\completePayButton.png" />
+    <BundleResource Include="Resources\prepareButton.png" />
+    <BundleResource Include="Resources\seeScheduleButton.png" />
+    <BundleResource Include="Resources\appleButton.png" />
+    <BundleResource Include="Resources\eye.png" />
+    <BundleResource Include="Resources\fbButton.png" />
+    <BundleResource Include="Resources\googleButton.png" />
+    <BundleResource Include="Resources\loginButton.png" />
+    <BundleResource Include="Resources\unfilledSignUp.png" />
+    <BundleResource Include="Resources\filledSignUp.png" />
+    <BundleResource Include="Resources\setUpProfileButton.png" />
   </ItemGroup>
 </Project>

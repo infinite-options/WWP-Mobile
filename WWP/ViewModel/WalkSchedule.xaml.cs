@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using WWP.Model;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 
@@ -7,6 +9,8 @@ namespace WWP.ViewModel
 {
     public partial class WalkSchedule : ContentPage
     {
+        ObservableCollection<Appointment> scheduleColl = new ObservableCollection<Appointment>();
+
         public WalkSchedule()
         {
             NavigationPage.SetHasBackButton(this, false);
@@ -17,6 +21,12 @@ namespace WWP.ViewModel
             Console.WriteLine("Height = " + height.ToString());
 
             InitializeComponent();
+            fillSchedule();
+        }
+
+        void fillSchedule()
+        {
+
         }
 
         void backClicked(object sender, EventArgs e)

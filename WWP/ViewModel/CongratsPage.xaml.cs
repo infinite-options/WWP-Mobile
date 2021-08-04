@@ -27,8 +27,13 @@ namespace WWP.ViewModel
         {
             try
             {
+                NavigationPage.SetHasBackButton(this, false);
+                NavigationPage.SetHasNavigationBar(this, false);
                 var width = DeviceDisplay.MainDisplayInfo.Width;
                 var height = DeviceDisplay.MainDisplayInfo.Height;
+                Console.WriteLine("Width = " + width.ToString());
+                Console.WriteLine("Height = " + height.ToString());
+
                 InitializeComponent();
 
             }
@@ -39,48 +44,18 @@ namespace WWP.ViewModel
             }
         }
 
-        async void clickedFilter(System.Object sender, System.EventArgs e)
+        void backClicked(object sender, EventArgs e)
         {
-            //await Navigation.PushAsync(new NavigationPage(new Filter()));
-            Application.Current.MainPage = new NavigationPage(new Filter());
+            Navigation.PopAsync();
+            //Application.Current.MainPage = new ProfileSummary();
         }
 
-        //async void clickedMenu(System.Object sender, System.EventArgs e)
-        //{
-        //    await Navigation.PushAsync(new Menu(cust_firstName, cust_lastName, cust_email));
-        //}
-
-
-        //menu functions
-        void profileClicked(System.Object sender, System.EventArgs e)
+        void scheduleClicked(object sender, EventArgs e)
         {
-            Application.Current.MainPage = new NavigationPage(new UserProfile());
+            Navigation.PushAsync(new WalkSchedule());
+            //Application.Current.MainPage = new ProfileSummary();
         }
 
-        void menuClicked(System.Object sender, System.EventArgs e)
-        {
-            openMenuGrid.IsVisible = true;
-            whiteCover.IsVisible = true;
-        }
-
-        void openedMenuClicked(System.Object sender, System.EventArgs e)
-        {
-            openMenuGrid.IsVisible = false;
-            whiteCover.IsVisible = false;
-        }
-
-        void browseClicked(System.Object sender, System.EventArgs e)
-        {
-            //Application.Current.MainPage = new FoodBanksMap();
-            Navigation.PushAsync(new FoodBanksMap());
-        }
-
-        void loginClicked(System.Object sender, System.EventArgs e)
-        {
-            Application.Current.MainPage = new LoginPage();
-        }
-
-        //end of menu functions
 
     }
 }

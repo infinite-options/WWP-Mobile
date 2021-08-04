@@ -5,31 +5,24 @@ using Xamarin.Forms;
 
 namespace WWP.ViewModel
 {
-    public partial class WalkSummary : ContentPage
+    public partial class SignUpOptions : ContentPage
     {
-        public WalkSummary()
+        public SignUpOptions()
         {
             NavigationPage.SetHasBackButton(this, false);
             NavigationPage.SetHasNavigationBar(this, false);
+
             var width = DeviceDisplay.MainDisplayInfo.Width;
             var height = DeviceDisplay.MainDisplayInfo.Height;
             Console.WriteLine("Width = " + width.ToString());
             Console.WriteLine("Height = " + height.ToString());
 
             InitializeComponent();
-
         }
 
-        void backClicked(object sender, EventArgs e)
+        void signUpClicked(object sender, EventArgs e)
         {
-            Navigation.PopAsync();
-            //Application.Current.MainPage = new ProfileSummary();
-        }
-
-        void completeClicked(object sender, EventArgs e)
-        {
-            Navigation.PushAsync(new CongratsPage());
-            //Application.Current.MainPage = new ProfileSummary();
+            Application.Current.MainPage = new SignUp();
         }
     }
 }

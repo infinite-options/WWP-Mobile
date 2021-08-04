@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="WWP.ViewModel.SignUpCongrats">
+    <ContentPage.Content>
+
+        <ScrollView>
+        <Grid>
+            <StackLayout>
+
+                
+                <Label Text="Congratulations!" TextColor="#F87F1B" HorizontalOptions="Center" FontAttributes="Bold" FontSize="25" Margin="0, 140,0, 30"/>
+
+                <Label Text="You’ve successfully sign up with us. We are so glad to have you onboard with us!"
+                      TextColor="Black" HorizontalTextAlignment="Center" FontSize="24" Margin="30,0,30,60"/>
+
+                <Image Margin="15,25,15,60" Source="mainBackground.png" VerticalOptions="End" HorizontalOptions="Fill"/>
+
+                <ImageButton WidthRequest="240" BackgroundColor="Transparent" Clicked="setUpClicked"
+                        HorizontalOptions="Center" Source="setUpProfileButton.png"  Margin="50, 0, 50, 20"/>
+
+            </StackLayout>
+        </Grid>
+        </ScrollView>
+
+    </ContentPage.Content>
+</ContentPage>

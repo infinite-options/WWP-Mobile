@@ -210,5 +210,8 @@
     <BundleResource Include="Resources\unfilledSignUp.png" />
     <BundleResource Include="Resources\filledSignUp.png" />
     <BundleResource Include="Resources\setUpProfileButton.png" />
+    <BundleResource Include="Resources\call.png" />
+    <BundleResource Include="Resources\text.png" />
+    <BundleResource Include="Resources\openedMenu.png" />
   </ItemGroup>
 </Project>

@@ -31,5 +31,39 @@ namespace WWP.ViewModel
             Navigation.PushAsync(new CongratsPage());
             //Application.Current.MainPage = new ProfileSummary();
         }
+
+        //walkie menu functions
+        void menuClicked(object sender, EventArgs e)
+        {
+            menu.IsVisible = false;
+            openWalkieMenuGrid.IsVisible = true;
+        }
+
+        void openMenuClicked(object sender, EventArgs e)
+        {
+            menu.IsVisible = true;
+            openWalkieMenuGrid.IsVisible = false;
+        }
+
+        void upcomingClicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new WalkSchedule());
+        }
+
+        void planClicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new WalkSchedule());
+        }
+
+        void profileClicked(object sender, EventArgs e)
+        {
+            //Navigation.PushAsync(new WalkSchedule());
+        }
+
+        void logoutClicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new MainLogin());
+        }
+        //end walkie menu functions
     }
 }

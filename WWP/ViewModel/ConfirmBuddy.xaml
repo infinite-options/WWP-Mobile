@@ -1,0 +1,176 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:Forms9Patch="clr-namespace:Forms9Patch;assembly=Forms9Patch"
+    x:Class="WWP.ViewModel.ConfirmBuddy">
+    <ContentPage.Content>
+
+        <ScrollView>
+            <StackLayout>
+                <BoxView x:Name="headingBuffer" HeightRequest="20"/>
+            <Grid>
+            <StackLayout x:Name="mainStack">
+
+                <Grid x:Name="headerGrid" Margin="20, 0, 20, 10" HeightRequest="40">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <ImageButton Source="back.png" BackgroundColor="Transparent" HorizontalOptions="Start" HeightRequest="25" Clicked="backClicked"/>
+                    <ImageButton x:Name="menu" Clicked="menuClicked" BackgroundColor="Transparent" Grid.Column="1" Source="menu.png" HorizontalOptions="End" VerticalOptions="Center" HeightRequest="25" WidthRequest="50"/>
+                    <BoxView x:Name="whiteCover" IsVisible="false" BackgroundColor="White" HorizontalOptions="Fill" VerticalOptions="Fill" Grid.Column="0" Grid.ColumnSpan="2"/>
+                </Grid>
+
+                <Label FontSize="24" HorizontalOptions="Center" HorizontalTextAlignment="Center" Text="Confirm your Walk Buddy" Margin="0, 20,0,20"/>
+
+                <Grid HeightRequest="128" Margin="10,5,10,25">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="128"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Image Source="profileBackground.png" Grid.RowSpan="2" Grid.ColumnSpan="2" HorizontalOptions="Fill" VerticalOptions="Fill"/>
+
+                    <ImageButton BackgroundColor="LightGray" HorizontalOptions="Start" WidthRequest="128" HeightRequest="128" CornerRadius="30" Grid.RowSpan="2" VerticalOptions="Fill"/>
+
+                    <Label Grid.Column="1" x:Name="name" Text="John Doe" Margin="20,0,20,3" FontSize="18" FontAttributes="Bold" HorizontalOptions="Start" VerticalOptions="End"/>
+                    <Image Grid.Column="1" Source="rightArrow.png" Margin="0,0,25,0" HorizontalOptions="End" HeightRequest="25" VerticalOptions="End"/>
+
+                    <Grid Grid.Column="1" Grid.Row="1" Margin="20,5,20,0" VerticalOptions="Start">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*"/> <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/> <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/> <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Image Source="SatGray.png" HorizontalOptions="Fill" VerticalOptions="Start"/>
+                        <Image Grid.Column="1" Source="MonGray.png" HorizontalOptions="Fill" VerticalOptions="Start"/>
+                        <Image Grid.Column="2" Source="TuesGray.png" HorizontalOptions="Fill" VerticalOptions="Start"/>
+                        <Image Grid.Column="3" Source="WedGray.png" HorizontalOptions="Fill" VerticalOptions="Start"/>
+                        <Image Grid.Column="4" Source="TuesGray.png" HorizontalOptions="Fill" VerticalOptions="Start"/>
+                        <Image Grid.Column="5" Source="FriGray.png" HorizontalOptions="Fill" VerticalOptions="Start"/>
+                        <Image Grid.Column="6" Source="SatGray.png" HorizontalOptions="Fill" VerticalOptions="Start"/>
+
+                    </Grid>
+
+                </Grid>
+
+                <Label Text="Bio:" FontAttributes="Bold" TextColor="#F87F1B" FontSize="16" Margin="35,0,0,5" HorizontalOptions="Start"/>
+
+                <Label Margin="35,0,35,15" TextColor="Black" FontSize="16" FontAttributes="Bold"
+                       Text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna"/>
+
+                <BoxView HeightRequest="1" Margin="15,0" Color="#F87F1B" HorizontalOptions="Fill"/>
+
+                <StackLayout Margin="35,15,0,15" Orientation="Horizontal">
+                    <Label Text="Likes to be called:" FontAttributes="Bold" Margin="0,0,10,0" TextColor="#F87F1B" FontSize="16" HorizontalOptions="Start"/>
+                    <Label Text="Dave" FontAttributes="Bold" TextColor="Black" FontSize="16" HorizontalOptions="Start"/>
+                </StackLayout>
+
+                <BoxView HeightRequest="1" Margin="15,0" Color="#F87F1B" HorizontalOptions="Fill"/>
+
+                <StackLayout Margin="35,15,0,15" Orientation="Horizontal">
+                    <Label Text="Email:" FontAttributes="Bold" Margin="0,0,10,0" TextColor="#F87F1B" FontSize="16" HorizontalOptions="Start"/>
+                    <Label Text="davesw@gmail.com" FontAttributes="Bold" TextColor="Black" FontSize="16" HorizontalOptions="Start"/>
+                </StackLayout>
+
+                <BoxView HeightRequest="1" Margin="15,0" Color="#F87F1B" HorizontalOptions="Fill"/>
+
+                <StackLayout Margin="35,15,0,15" Orientation="Horizontal">
+                    <Label Text="Phone:" FontAttributes="Bold" Margin="0,0,10,0" TextColor="#F87F1B" FontSize="16" HorizontalOptions="Start"/>
+                    <Label Text="(262) 671-9010" FontAttributes="Bold" TextColor="Black" FontSize="16" HorizontalOptions="Start"/>
+                </StackLayout>
+
+                <BoxView HeightRequest="1" Margin="15,0" Color="#F87F1B" HorizontalOptions="Fill"/>
+
+                <Label Text="Hobbies and Interests:" FontAttributes="Bold" TextColor="#F87F1B" FontSize="16" Margin="35,15,0,5" HorizontalOptions="Start"/>
+
+                <CollectionView x:Name="hobbyCollView" Margin="16, 0,16,0" HorizontalOptions="Fill">
+                    <CollectionView.ItemsLayout>
+                        <GridItemsLayout Orientation="Vertical" Span="3" SnapPointsType="None" HorizontalItemSpacing="10" VerticalItemSpacing="10"/>
+                    </CollectionView.ItemsLayout>
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <!--<Button HeightRequest="40" Text="{Binding name}" CornerRadius="20" Padding="5,0"
+                                    TextColor="Black" FontSize="15" FontAttributes="Bold" BackgroundColor="{Binding bgColor}"/>-->
+                            <Forms9Patch:Button HeightRequest="40" Text="{Binding name}" BorderRadius="20" Padding="15,0"
+                                    TextColor="Black" FontAttributes="Bold" BackgroundColor="{Binding bgColor}"/>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+
+                <BoxView HeightRequest="1" Margin="15,0" Color="#F87F1B" HorizontalOptions="Fill"/>
+
+                <Label Text="Experience:" FontAttributes="Bold" TextColor="#F87F1B" FontSize="16" Margin="35,15,0,5" HorizontalOptions="Start"/>
+
+                <Label Margin="35,0,35,15" TextColor="Black" FontSize="16" FontAttributes="Bold"
+                       Text="2 yrs as a Walk Buddy&#10;1 yr volunteering at SJ Retirement Homes"/>
+
+                <BoxView HeightRequest="1" Margin="15,0,15,25" Color="#F87F1B" HorizontalOptions="Fill"/>
+
+                <ImageButton Source="confirmButton.png" Margin="80,10,80,50" Clicked="confirmClicked" HorizontalOptions="Center"/>
+
+            </StackLayout>
+
+            <Grid x:Name="openWalkieMenuGrid" IsVisible="false" Margin="0, 10, 0, 10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+
+                    <!--<ImageButton IsVisible="false" Source="back.png" BackgroundColor="Transparent" HorizontalOptions="Start" VerticalOptions="End" HeightRequest="25" Clicked="backClicked"/>-->
+
+                    <ImageButton CornerRadius="0" Margin="20,0,30,0" x:Name="openedMenu" Grid.Column="1" Source="openedMenu.png" HorizontalOptions="End" VerticalOptions="End" HeightRequest="25" Clicked="openMenuClicked"/>
+
+                    <BoxView CornerRadius="0" BackgroundColor="#F87F1B" Grid.Row="1" Grid.ColumnSpan="2" HorizontalOptions="Fill" HeightRequest="300"/>
+
+                    <StackLayout Grid.Row="1" Grid.ColumnSpan="2" Margin="0,0,15,0" VerticalOptions="Center">
+                        <Grid HorizontalOptions="Fill" HeightRequest="33">
+                            <Label Text="Upcoming Walks" HorizontalTextAlignment="End" VerticalOptions="Center" FontSize="20" FontAttributes="Bold" TextColor="White"/>
+                            <Button HorizontalOptions="Fill" VerticalOptions="Fill" BackgroundColor="Transparent" Clicked="upcomingClicked"/>
+                        </Grid>
+
+                        <Grid HorizontalOptions="Fill" HeightRequest="33" Margin="0,5">
+                            <Label Text="Plan your next walk" HorizontalTextAlignment="End" VerticalOptions="Center" FontSize="20" FontAttributes="Bold" TextColor="White"/>
+                            <Button HorizontalOptions="Fill" VerticalOptions="Fill" BackgroundColor="Transparent" Clicked="planClicked"/>
+                        </Grid>
+
+                        <Grid HorizontalOptions="Fill" HeightRequest="33">
+                            <Label Text="Profile / Account" HorizontalTextAlignment="End" VerticalOptions="Center" FontSize="20" FontAttributes="Bold" TextColor="White"/>
+                            <Button HorizontalOptions="Fill" VerticalOptions="Fill" BackgroundColor="Transparent" Clicked="profileClicked"/>
+                        </Grid>
+
+                        <Grid HorizontalOptions="Fill" HeightRequest="33" Margin="0,5">
+                            <Label Text="Customer Support" HorizontalTextAlignment="End" VerticalOptions="Center" FontSize="20" FontAttributes="Bold" TextColor="White"/>
+                            <Button HorizontalOptions="Fill" VerticalOptions="Fill" BackgroundColor="Transparent"/>
+                        </Grid>
+
+                        <Grid HorizontalOptions="Fill" HeightRequest="33">
+                            <Label Text="Emergency Contact" HorizontalTextAlignment="End" VerticalOptions="Center" FontSize="20" FontAttributes="Bold" TextColor="White"/>
+                            <Button HorizontalOptions="Fill" VerticalOptions="Fill" BackgroundColor="Transparent"/>
+                        </Grid>
+
+                        <Grid HorizontalOptions="Fill" HeightRequest="33" Margin="0,5,0,0">
+                            <Label Text="Log out" HorizontalTextAlignment="End" VerticalOptions="Center" FontSize="20" FontAttributes="Bold" TextColor="White"/>
+                            <Button HorizontalOptions="Fill" VerticalOptions="Fill" BackgroundColor="Transparent" Clicked="logoutClicked"/>
+                        </Grid>
+                    </StackLayout>
+
+            </Grid>
+
+            </Grid>
+            </StackLayout>
+        </ScrollView>
+
+    </ContentPage.Content>
+</ContentPage>

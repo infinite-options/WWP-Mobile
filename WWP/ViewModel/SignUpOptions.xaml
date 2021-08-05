@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="WWP.ViewModel.SignUpOptions">
+    <ContentPage.Content>
+
+        <ScrollView>
+        <Grid>
+            <StackLayout VerticalOptions="Fill">
+
+                <Label Text="Welcome!" TextColor="#F87F1B" HorizontalOptions="Center" FontAttributes="Bold" FontSize="25" Margin="0, 40,0, 15"/>
+
+                <Label HorizontalOptions="Center" Margin="0,60,0,35" HorizontalTextAlignment="Center" FontSize="18">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Please choose " FontSize="24" TextColor="Black"/>
+                            <Span Text="one" FontSize="24" TextColor="Black" FontAttributes="Bold"/>
+                            <Span Text=" of the&#10;options below" FontSize="24" TextColor="Black"/>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+
+                <Grid HorizontalOptions="Center">
+                    <BoxView HeightRequest="150" Margin="40,0" CornerRadius="20" BackgroundColor="#F87F1B"/>
+                    <Label Text="Are you looking for&#10;scheduling walks with a&#10;walk buddy?" FontSize="24" TextColor="White"
+                           HorizontalTextAlignment="Center" VerticalOptions="Center" VerticalTextAlignment="Center"/>
+                    <Button BackgroundColor="Transparent" Clicked="signUpClicked" HorizontalOptions="Fill" VerticalOptions="Fill"/>
+                </Grid>
+
+                <Grid HorizontalOptions="Center" Margin="40,20,40,50">
+                    <BoxView HeightRequest="150" WidthRequest="346" CornerRadius="20" BackgroundColor="#F87F1B"/>
+                    <Label Text="Are you looking to&#10;yourself be a walk buddy&#10;to seniors?" FontSize="24" TextColor="White"
+                           HorizontalTextAlignment="Center" VerticalOptions="Center" VerticalTextAlignment="Center"/>
+                    <Button BackgroundColor="Transparent" Clicked="signUpClicked" HorizontalOptions="Fill" VerticalOptions="Fill"/>
+                </Grid>
+
+                <Image Margin="50,50,50,0" Source="mainBackground.png" VerticalOptions="End" HorizontalOptions="Fill"/>
+
+            </StackLayout>
+        </Grid>
+        </ScrollView>
+
+    </ContentPage.Content>
+</ContentPage>

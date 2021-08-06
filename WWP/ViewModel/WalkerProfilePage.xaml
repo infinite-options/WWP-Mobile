@@ -1,0 +1,178 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="WWP.ViewModel.WalkerProfilePage"
+    NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="70"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <FlexLayout Grid.Row="0" JustifyContent="SpaceBetween">
+                <StackLayout HeightRequest="70" WidthRequest="80">
+                    <StackLayout VerticalOptions="CenterAndExpand">
+                        <ImageButton HeightRequest="20" Margin="20,0,0,0" Source="backButtonIcon"></ImageButton>
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout HeightRequest="70" WidthRequest="80">
+                    <StackLayout VerticalOptions="CenterAndExpand">
+                        <ImageButton HeightRequest="18" Margin="20,0,0,0" Source="menuButtonIcon" Clicked="NavigateToWalkerPrepPage"></ImageButton>
+                    </StackLayout>
+                </StackLayout>
+            </FlexLayout>
+            <StackLayout Grid.Row="1" Spacing="20">
+                <ScrollView>
+                    <StackLayout Spacing="25">
+                        <StackLayout HorizontalOptions="Center">
+                            <Label Text="Profile" TextColor="Black" FontSize="24"></Label>
+                        </StackLayout>
+                        <StackLayout Margin="20,0,20,0">
+                            <Frame BackgroundColor="#FFF2EA" CornerRadius="25" HasShadow="False" Padding="0">
+                                <Grid >
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="128"></ColumnDefinition>
+                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <Frame Grid.Column="0" HasShadow="False" CornerRadius="25" HeightRequest="128" Padding="0" IsClippedToBounds="True">
+                                        <Image Source="walkiePhoto"></Image>
+                                    </Frame>
+                                    <StackLayout Grid.Column="1" VerticalOptions="Center">
+                                        <Label Margin="15,0,0,0" Text="David Schwimmer" TextColor="Black" FontSize="18" FontAttributes="Bold"></Label>
+                                    </StackLayout>
+                                </Grid>
+                            </Frame>
+                        </StackLayout>
+                        <StackLayout Spacing="15">
+                            <StackLayout Margin="20,0,20,0">
+                                <StackLayout>
+                                    <Label Text="Bio:" TextColor="#F87F1B" FontSize="16" FontAttributes="Bold"></Label>
+                                </StackLayout>
+                                <StackLayout>
+                                    <Label Text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna" TextColor="Black" FontSize="16" FontAttributes="Bold"></Label>
+                                </StackLayout>
+                            </StackLayout>
+                            <StackLayout>
+                                <BoxView Margin="10,0,10,0" HeightRequest="0.5" Color="#F87F1B"></BoxView>
+                            </StackLayout>
+                            <StackLayout Margin="20,0,20,0">
+                                <Label FontSize="16" FontAttributes="Bold">
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <Span Text="Likes to be called:  " TextColor="#F87F1B"/>
+                                            <Span Text="Dave" x:Name="walkie" TextColor="Black"/>
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                </Label>
+                            </StackLayout>
+                            <StackLayout>
+                                <BoxView Margin="10,0,10,0" HeightRequest="0.5" Color="#F87F1B"></BoxView>
+                            </StackLayout>
+                            <StackLayout Margin="20,0,20,0">
+                                <Label FontSize="16" FontAttributes="Bold">
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <Span Text="Email:  " TextColor="#F87F1B"/>
+                                            <Span Text="davesw@gmail.com" x:Name="walkieEmail" TextColor="Black"/>
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                </Label>
+                            </StackLayout>
+                            <StackLayout>
+                                <BoxView Margin="10,0,10,0" HeightRequest="0.5" Color="#F87F1B"></BoxView>
+                            </StackLayout>
+                            <StackLayout Margin="20,0,20,0">
+                                <Label FontSize="16" FontAttributes="Bold">
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <Span Text="Phone:  " TextColor="#F87F1B"/>
+                                            <Span Text="(262) 671-9010" x:Name="walkiePhone" TextColor="Black"/>
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                </Label>
+                                <Label FontSize="16" FontAttributes="Bold">
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <Span Text="Emergency Phone:  " TextColor="#F87F1B"/>
+                                            <Span Text="(262) 671-9014" x:Name="walkieEmergencyPhone" TextColor="Black"/>
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                </Label>
+                            </StackLayout>
+                            <StackLayout>
+                                <BoxView Margin="10,0,10,0" HeightRequest="0.5" Color="#F87F1B"></BoxView>
+                            </StackLayout>
+                            <StackLayout Margin="20,0,20,0">
+                                <Label Text="Hobbies and Interests:" TextColor="#F87F1B" FontSize="16" FontAttributes="Bold"></Label>
+                                <StackLayout>
+                                    <CollectionView x:Name="hobbiesInterestsCollection" HeightRequest="50">
+                                        <CollectionView.ItemsLayout>
+                                            <GridItemsLayout Span="3" Orientation="Horizontal" HorizontalItemSpacing="10"></GridItemsLayout>
+                                        </CollectionView.ItemsLayout>
+                                        <CollectionView.ItemTemplate>
+                                            <DataTemplate>
+                                                <StackLayout>
+                                                    <Frame>
+                                                        <StackLayout>
+                                                            <Label Text="{Binding title}"></Label>
+                                                        </StackLayout>
+                                                    </Frame>
+                                                </StackLayout>
+                                            </DataTemplate>
+                                        </CollectionView.ItemTemplate>
+                                    </CollectionView>
+                                </StackLayout>
+                            </StackLayout>
+                            <StackLayout>
+                                <BoxView Margin="10,0,10,0" HeightRequest="0.5" Color="#F87F1B"></BoxView>
+                            </StackLayout>
+                            <StackLayout Margin="20,0,20,0">
+                                <StackLayout>
+                                    <Label Text="Talking Points (from caregiver):" TextColor="#F87F1B" FontSize="16" FontAttributes="Bold"></Label>
+                                </StackLayout>
+                                <StackLayout>
+                                    <Label Text="His grandchildren, they visit often His time in the navy Loves the show “Grace and Frankie”" TextColor="Black" FontSize="16" FontAttributes="Bold"></Label>
+                                </StackLayout>
+                            </StackLayout>
+                            <StackLayout>
+                                <BoxView Margin="10,0,10,0" HeightRequest="0.5" Color="#F87F1B"></BoxView>
+                            </StackLayout>
+                            <StackLayout Margin="20,0,20,0">
+                                <StackLayout>
+                                    <Label Text="Notes from caregiver:" TextColor="#F87F1B" FontSize="16" FontAttributes="Bold"></Label>
+                                </StackLayout>
+                                <StackLayout>
+                                    <Label Text="He gets tired easily, so offer him a seat every 20 mins. Seating for 5-10 mins is good enough for him to get going again. He loves dogs, if you come across a dog park on your walk, he would love to go there." TextColor="Black" FontSize="16" FontAttributes="Bold"></Label>
+                                </StackLayout>
+                            </StackLayout>
+                            <StackLayout>
+                                <BoxView Margin="10,0,10,0" HeightRequest="0.5" Color="#F87F1B"></BoxView>
+                            </StackLayout>
+                            <StackLayout Margin="20,0,20,0">
+                                <StackLayout>
+                                    <Label Text="Past wellness reports (From past walkers):" TextColor="#F87F1B" FontSize="16" FontAttributes="Bold"></Label>
+                                </StackLayout>
+                                <StackLayout>
+                                    <CollectionView x:Name="passWellnessReportCollection" HeightRequest="100">
+                                        <CollectionView.ItemTemplate>
+                                            <DataTemplate>
+                                                <StackLayout>
+                                                    <Label Text="{Binding date}"></Label>
+                                                    <Label Text="{Binding report}"></Label>
+                                                </StackLayout>
+                                            </DataTemplate>
+                                        </CollectionView.ItemTemplate>
+                                    </CollectionView>
+                                </StackLayout>
+                            </StackLayout>
+                            <StackLayout>
+                                <BoxView Margin="10,0,10,0" HeightRequest="0.5" Color="#F87F1B"></BoxView>
+                            </StackLayout>
+                        </StackLayout>
+                    </StackLayout>
+                </ScrollView>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="WWP.ViewModel.WellnessReportPage"
+    NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="70"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <FlexLayout Grid.Row="0" JustifyContent="SpaceBetween">
+                <StackLayout HeightRequest="70" WidthRequest="80">
+                    <StackLayout VerticalOptions="CenterAndExpand">
+                        <ImageButton HeightRequest="20" Margin="20,0,0,0" Source="backButtonIcon" Clicked="NavigateBack"></ImageButton>
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout HeightRequest="70" WidthRequest="80">
+                    <StackLayout VerticalOptions="CenterAndExpand">
+                        <ImageButton HeightRequest="18" Margin="20,0,0,0" Source="menuButtonIcon" Clicked="NavigateToSchedule"></ImageButton>
+                    </StackLayout>
+                </StackLayout>
+            </FlexLayout>
+            <StackLayout Grid.Row="1" Spacing="20">
+                <StackLayout HorizontalOptions="Center">
+                    <Label Text="How was your walk?" TextColor="Black" FontSize="24"></Label>
+                </StackLayout>
+                <StackLayout Margin="15,0,15,0" Spacing="25">
+                    <StackLayout>
+                        <StackLayout>
+                            <Label Text="Wellness report notes:" TextColor="#F87F1B" FontAttributes="Bold" FontSize="15"></Label>
+                        </StackLayout>
+                        <StackLayout>
+                            <Frame BorderColor="Black" HasShadow="False" CornerRadius="20">
+                                <StackLayout>
+                                    <Label Text="Please give us notes regarding the senior you went walked with? Anything that the caregiver or doctors should know." FontAttributes="Bold" FontSize="16" TextColor="DarkGray"></Label>
+                                </StackLayout>
+                            </Frame>
+                        </StackLayout>
+                    </StackLayout>
+                    <StackLayout>
+                        <StackLayout>
+                            <Label Text="Private Concerns (goes to customer support):" TextColor="#F87F1B" FontAttributes="Bold" FontSize="15"></Label>
+                        </StackLayout>
+                        <StackLayout>
+                            <Frame BorderColor="Black" HasShadow="False" CornerRadius="20">
+                                <StackLayout>
+                                    <Label Text="If you have any other suggestions / notes." FontAttributes="Bold" FontSize="16" TextColor="DarkGray"></Label>
+                                </StackLayout>
+                            </Frame>
+                        </StackLayout>
+                    </StackLayout>
+                    <StackLayout Margin="50">
+                        <Button CornerRadius="20" Text="Submit Report" Clicked="NavigateToFeedbackPage" TextColor="White" FontAttributes="Bold" FontSize="18" BackgroundColor="#F87F1B"></Button>
+                    </StackLayout>
+                </StackLayout>
+                
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

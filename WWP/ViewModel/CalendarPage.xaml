@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:controls="clr-namespace:XamForms.Controls;assembly=XamForms.Controls.Calendar"
+    x:Class="WWP.ViewModel.CalendarPage"
+    NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+         <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="70"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <FlexLayout Grid.Row="0" JustifyContent="SpaceBetween">
+                <Button Margin="20,0,0,0" Text="Back" TextColor="#F87F1B" Clicked="NavigateBack" ></Button>
+                <Button Margin="0,0,20,0" Text="Menu" TextColor="#F87F1B" Clicked="NavigateToSchedule"></Button>
+            </FlexLayout>
+            <StackLayout Grid.Row="1" Spacing="15">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="60"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <StackLayout Grid.Row="0" VerticalOptions="Center">
+                        <StackLayout HorizontalOptions="Center">
+                            <Label Text="Your Schedule" TextColor="Black" FontSize="24"></Label>
+                        </StackLayout>
+                        <StackLayout HeightRequest="19" Margin="5,0,5,0" Orientation="Horizontal" HorizontalOptions="Center">
+                            <StackLayout Orientation="Horizontal">
+                                <Ellipse HeightRequest="19" StrokeThickness="0" WidthRequest="19" Fill="#EFEFEF"></Ellipse>
+                                <Label VerticalOptions="Center" Text="Past Walks" FontAttributes="Bold" FontSize="12"></Label>
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal">
+                                <Ellipse HeightRequest="19" StrokeThickness="0" WidthRequest="19" Fill="#F87F1B"></Ellipse>
+                                <Label VerticalOptions="Center" Text="Today" FontAttributes="Bold"  FontSize="12"></Label>
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal">
+                                <Ellipse HeightRequest="19" Stroke="#F87F1B" WidthRequest="19" Fill="#FFF2EA"></Ellipse>
+                                <Label VerticalOptions="Center" Text="Future Walks" FontAttributes="Bold"  FontSize="12"></Label>
+                            </StackLayout>
+                        </StackLayout>
+                    </StackLayout>
+                    <StackLayout Grid.Row="1">
+                        <controls:Calendar
+                            x:Name="calendar"
+                            Padding="10,0,10,0"   
+                            SelectedBorderWidth="1"
+                            SelectedBorderColor="Black"
+                            DisabledBorderColor="Black"
+                            BorderColor="White"
+                            ShowNumberOfWeek="false"  
+                            StartDay="Sunday"
+                            WeekdaysTextColor="#F87F1B"
+                            TitleLabelTextColor="#F87F1B" 
+                            TitleLeftArrowTextColor="#F87F1B"
+                            TitleRightArrowTextColor="#F87F1B"
+                            SelectedTextColor="Black"
+                            DatesTextColorOutsideMonth="White"
+                            DateClicked="SelectedDate">
+                        </controls:Calendar>
+                    </StackLayout>
+                    <Frame Grid.Row="2" HasShadow="False" BackgroundColor="#FFF2EA" CornerRadius="20">
+                        <StackLayout>
+                            <StackLayout HorizontalOptions="Center" x:Name="noScheduledWalks">
+                                <Label Text="No Walks schedule yet" TextColor="#F87F1B" FontSize="18" FontAttributes="Bold"></Label>
+                            </StackLayout>
+                            <StackLayout x:Name="scheduledWalks">
+                                <StackLayout HorizontalOptions="Center">
+                                    <Label x:Name="scheduleDateLabel" TextColor="Black" FontSize="18" FontAttributes="Bold"></Label>
+                                </StackLayout>
+                                <StackLayout HorizontalOptions="Center">
+                                    <Label x:Name="scheduleWalksLabel" TextColor="#F87F1B" FontSize="18" FontAttributes="Bold"></Label>
+                                </StackLayout>
+                                <StackLayout>
+                                    <CollectionView x:Name="scheduledWalksCollection">
+                                        <CollectionView.ItemTemplate>
+                                            <DataTemplate>
+                                                <ContentView Padding="5">
+                                                    <StackLayout>
+                                                        <Frame HeightRequest="114" BackgroundColor="#EFEFEF" Padding="0" HasShadow="False" CornerRadius="25">
+                                                            <StackLayout>
+                                                                <Grid>
+                                                                    <Grid.ColumnDefinitions>
+                                                                        <ColumnDefinition Width="114"></ColumnDefinition>
+                                                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                                                        <ColumnDefinition Width="50"></ColumnDefinition>
+                                                                    </Grid.ColumnDefinitions>
+                                                                    <StackLayout Grid.Column="0">
+                                                                        <Frame HeightRequest="114" WidthRequest="114" CornerRadius="25" HasShadow="False" Padding="0">
+                                                                            <Image Source="{Binding photo}"></Image>
+                                                                        </Frame>
+                                                                    </StackLayout>
+                                                                    <StackLayout  Grid.Column="1" HorizontalOptions="Center" VerticalOptions="Center">
+                                                                        <Label Text="{Binding name}" FontSize="16" FontAttributes="Bold"></Label>
+                                                                        <Label Text="{Binding timeInterval}" FontSize="16" FontAttributes="Bold"></Label>
+                                                                    </StackLayout>
+                                                                    <StackLayout  Grid.Column="2">
+                                                                        <StackLayout  HorizontalOptions="Center" VerticalOptions="CenterAndExpand">
+                                                                            <StackLayout>
+                                                                                <ImageButton HeightRequest="30" WidthRequest="30" Source="messageButtonIcon"></ImageButton>
+                                                                            </StackLayout>
+                                                                            <StackLayout>
+                                                                                <ImageButton HeightRequest="30" WidthRequest="30" Source="callButtonIcon"></ImageButton>
+                                                                            </StackLayout>
+                                                                        </StackLayout>
+                                                                    </StackLayout>
+                                                                </Grid>
+                                                            </StackLayout>
+                                                        </Frame>
+                                                    </StackLayout>
+                                                </ContentView>
+                                            </DataTemplate>
+                                        </CollectionView.ItemTemplate>
+                                    </CollectionView>
+                                </StackLayout>
+                            </StackLayout>
+                        </StackLayout>
+                    </Frame>
+                </Grid>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
+    x:Class="WWP.ViewModel.WalkerTimer"
+    NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="70"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <FlexLayout Grid.Row="0" JustifyContent="SpaceBetween">
+                <StackLayout HeightRequest="70" WidthRequest="80">
+                    <StackLayout VerticalOptions="CenterAndExpand">
+                        <ImageButton HeightRequest="20" Margin="20,0,0,0" Clicked="NavigateBackToWalkSummary" Source="backButtonIcon"></ImageButton>
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout HeightRequest="70" WidthRequest="80">
+                    <StackLayout VerticalOptions="CenterAndExpand">
+                        <ImageButton HeightRequest="18" Margin="20,0,0,0" Clicked="NavigateToSchedule"  Source="menuButtonIcon"></ImageButton>
+                    </StackLayout>
+                </StackLayout>
+            </FlexLayout>
+            <StackLayout Grid.Row="1" Spacing="15">
+                <StackLayout HorizontalOptions="Center">
+                    <Label x:Name="walkie" TextColor="Black" FontSize="24"></Label>
+                </StackLayout>
+                <StackLayout Margin="5,0,5,0" Orientation="Horizontal" HorizontalOptions="Center">
+                    <StackLayout Orientation="Horizontal">
+                        <Ellipse HeightRequest="19" WidthRequest="19" Fill="#F87F1B"></Ellipse>
+                        <Label VerticalOptions="Center" Text="Rest Stops" FontAttributes="Bold" FontSize="12"></Label>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Ellipse HeightRequest="19" WidthRequest="19" Fill="Red"></Ellipse>
+                        <Label VerticalOptions="Center" Text="Start / end Point" FontAttributes="Bold"  FontSize="12"></Label>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Ellipse HeightRequest="19" WidthRequest="19" Fill="#F87F1B"></Ellipse>
+                        <Label VerticalOptions="Center" Text="Spots captured" FontAttributes="Bold"  FontSize="12"></Label>
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout>
+                    <Frame HeightRequest="200" Margin="20,0,20,0" Padding="0" HasShadow="False" IsClippedToBounds="True">
+                        <StackLayout>
+                            <maps:Map x:Name="map" MapType="Hybrid"></maps:Map>
+                        </StackLayout>
+                    </Frame>
+                </StackLayout>
+                <StackLayout Margin="40,0,40,0">
+                    <BoxView HeightRequest="1" Color="#FF7F00"></BoxView>
+                </StackLayout>
+                <FlexLayout Margin="20,0,20,0" JustifyContent="SpaceBetween">
+                    <StackLayout>
+                        <Label Text="0.00" FontSize="24" FontAttributes="Bold" TextColor="#FF7F00" x:Name="miles"></Label>
+                        <StackLayout HorizontalOptions="Center">
+                            <Label Text="Miles" TextColor="Black" FontSize="13"></Label>
+                        </StackLayout>
+                    </StackLayout>
+                    <StackLayout>
+                        <Label Text="000" FontSize="24" FontAttributes="Bold" TextColor="#FF7F00" x:Name="steps"></Label>
+                        <StackLayout HorizontalOptions="Center">
+                            <Label Text="Steps" TextColor="Black" FontSize="13"></Label>
+                        </StackLayout>
+                    </StackLayout>
+                    <StackLayout>
+                        <Label Text="000" FontSize="24" FontAttributes="Bold" TextColor="#FF7F00" x:Name="calories"></Label>
+                        <StackLayout HorizontalOptions="Center">
+                            <Label Text="Calories" TextColor="Black" FontSize="13"></Label>
+                        </StackLayout>
+                    </StackLayout>
+                </FlexLayout>
+                <StackLayout VerticalOptions="FillAndExpand">
+                    <FlexLayout JustifyContent="SpaceBetween" VerticalOptions="CenterAndExpand">
+                        <StackLayout>
+                            <StackLayout VerticalOptions="CenterAndExpand">
+                                <ImageButton Margin="30,0,0,0" Source="cameraIcon" Clicked="TakePicture"></ImageButton>
+                            </StackLayout>
+                        </StackLayout>
+                        <StackLayout HeightRequest="100">
+                            <Frame Padding="0" HasShadow="False" HeightRequest="100" WidthRequest="110">
+                                <StackLayout>
+                                    <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Orientation="Horizontal">
+                                        <Label x:Name="minutes" Text="45" FontSize="30"></Label>
+                                        <Label Text=":" FontSize="30"></Label>
+                                        <Label x:Name="second" Text="00" FontSize="30"></Label>
+                                    </StackLayout>
+                                </StackLayout>
+                            </Frame>
+                        </StackLayout>
+                        <StackLayout>
+                            <StackLayout VerticalOptions="CenterAndExpand">
+                                <ImageButton Margin="0,0,40,0" Source="callButtonIcon" Clicked="MakeCall" HeightRequest="25"></ImageButton>
+                            </StackLayout>
+                        </StackLayout>
+                    </FlexLayout>
+                </StackLayout>
+                <StackLayout Margin="0,0,0,20">
+                    <Button Margin="60,0,60,0" Clicked="NavigateToWellnessReportPage" CornerRadius="20" FontSize="18" FontAttributes="Bold" Text="End Walk" TextColor="White" BackgroundColor="#FF7F00"></Button>
+                </StackLayout>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

@@ -163,6 +163,8 @@ namespace WWP
                 MainPage = new MainPage();
             }
 
+            //MainPage = new NavigationPage(new WalkerWalkSummary());
+
         }
 
         protected override async void OnStart()

@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="WWP.ViewModel.WalkerPrepPage"
+    NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="70"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <FlexLayout Grid.Row="0" JustifyContent="SpaceBetween">
+                <StackLayout HeightRequest="70" WidthRequest="80">
+                    <StackLayout VerticalOptions="CenterAndExpand">
+                        <ImageButton HeightRequest="20" Margin="20,0,0,0" Source="backButtonIcon" Clicked="NavigateToWalkSummaryPage"></ImageButton>
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout HeightRequest="70" WidthRequest="80">
+                    <StackLayout VerticalOptions="CenterAndExpand">
+                        <ImageButton HeightRequest="18" Margin="20,0,0,0" Source="menuButtonIcon" Clicked="NavigateToWellnessReport"></ImageButton>
+                    </StackLayout>
+                </StackLayout>
+            </FlexLayout>
+            <ScrollView Grid.Row="1">
+                <StackLayout Spacing="20">
+                <StackLayout HorizontalOptions="Center">
+                    <Label Text="Prepare for Your Walk" TextColor="Black" FontSize="24"></Label>
+                </StackLayout>
+                <StackLayout HorizontalOptions="Center" Margin="50,0,50,0">
+                    <Label FontSize="24" FontAttributes="Bold" HorizontalTextAlignment="Center">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="Your walk is in " x:Name="walkMessage" TextColor="Black"/>
+                                <Span Text="30 mins" x:Name="time" TextColor="#F87F1B"/>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                </StackLayout>
+                <StackLayout x:Name="sitBackAndRelaxMessage" Margin="30,0,30,0" HorizontalOptions="Center">
+                    <Label FontSize="24" FontAttributes="Bold" HorizontalTextAlignment="Center">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="Plese sit back and relax, we will ping you " TextColor="Black"/>
+                                <Span Text="30 mins " x:Name="timeBeforeWalk" TextColor="#F87F1B"/>
+                                <Span Text="before " TextColor="#F87F1B"/>
+                                <Span Text="the walk." TextColor="Black"/>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                </StackLayout>
+                <StackLayout Margin="40,0,40,0" HorizontalOptions="Center">
+                    <Label HorizontalTextAlignment="Center" x:Name="reminderMessage" Text="Make you sure you got everything you need!" FontAttributes="Bold" TextColor="#F87F1B" FontSize="18"></Label>
+                </StackLayout>
+                <StackLayout>
+                    <CollectionView x:Name="prepItemCollection" HeightRequest="800">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <ContentView Padding="5">
+                                    <StackLayout HeightRequest="25">
+                                        <StackLayout Orientation="Horizontal" HeightRequest="25">
+                                            <StackLayout VerticalOptions="Center">
+                                                <CheckBox HeightRequest="21" WidthRequest="21" Color="Black" IsChecked="{Binding isChecked}" ></CheckBox>
+                                            </StackLayout>
+                                            <StackLayout VerticalOptions="Center">
+                                                <Label Text="{Binding title}" FontAttributes="Bold" TextColor="Black" FontSize="18"></Label>
+                                                <StackLayout.GestureRecognizers>
+                                                    <TapGestureRecognizer Tapped="CheckItem" CommandParameter="{Binding .}"></TapGestureRecognizer>
+                                                </StackLayout.GestureRecognizers>
+                                            </StackLayout>
+                                        </StackLayout>
+                                    </StackLayout>
+                                </ContentView>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </StackLayout>
+                <StackLayout x:Name="sitBackAndRelaxButton" Margin="100,50,100,0">
+                    <Button CornerRadius="20" Text="okay" Clicked="Okay" TextColor="White" BackgroundColor="#F87F1B" FontSize="18" ></Button>
+                </StackLayout>
+                <StackLayout x:Name="allRequiredItemsAreChecked">
+                    <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
+                        <Label Text="All done, awesome!" TextColor="#F87F1B" FontSize="18" FontAttributes="Bold"></Label>
+                        <StackLayout>
+                            <Image></Image>
+                        </StackLayout>
+                    </StackLayout>
+                    <StackLayout Margin="35,30,35,0" HorizontalOptions="Center">
+                        <Label HorizontalTextAlignment="Center" Text="If you don’t see David when you get there, feel free to contact him" FontAttributes="Bold" TextColor="Black" FontSize="18"></Label>
+                    </StackLayout>
+                    <StackLayout Margin="5,15,5,0">
+                        <CollectionView x:Name="personToWalkWithCollection">
+                            <CollectionView.ItemTemplate>
+                                <DataTemplate>
+                                    <ContentView Padding="5">
+                                        <StackLayout>
+                                            <Frame HeightRequest="100" BackgroundColor="#FFF2EA" Padding="0" HasShadow="False" CornerRadius="25">
+                                                <StackLayout>
+                                                    <Grid>
+                                                        <Grid.ColumnDefinitions>
+                                                            <ColumnDefinition Width="88"></ColumnDefinition>
+                                                            <ColumnDefinition Width="*"></ColumnDefinition>
+                                                            <ColumnDefinition Width="50"></ColumnDefinition>
+                                                        </Grid.ColumnDefinitions>
+                                                        <StackLayout Grid.Column="0">
+                                                            <StackLayout HeightRequest="100">
+                                                                 <Frame VerticalOptions="CenterAndExpand" HeightRequest="88" WidthRequest="88" CornerRadius="25" HasShadow="False" Padding="0">
+                                                                    <Image Source="{Binding photo}"></Image>
+                                                                </Frame>
+                                                            </StackLayout>
+                                                        </StackLayout>
+                                                        <StackLayout  Grid.Column="1" HorizontalOptions="Center" VerticalOptions="Center">
+                                                            <Label Text="{Binding name}" FontSize="16" FontAttributes="Bold"></Label>
+                                                            <Label Text="{Binding timeInterval}" FontSize="16" FontAttributes="Bold"></Label>
+                                                        </StackLayout>
+                                                        <StackLayout  Grid.Column="2">
+                                                            <StackLayout  HorizontalOptions="Center" VerticalOptions="CenterAndExpand">
+                                                                <StackLayout>
+                                                                    <ImageButton HeightRequest="30" WidthRequest="30" Source="messageButtonIcon"></ImageButton>
+                                                                </StackLayout>
+                                                                <StackLayout>
+                                                                    <ImageButton HeightRequest="30" WidthRequest="30" Source="callButtonIcon"></ImageButton>
+                                                                </StackLayout>
+                                                            </StackLayout>
+                                                        </StackLayout>
+                                                    </Grid>
+                                                </StackLayout>
+                                            </Frame>
+                                        </StackLayout>
+                                    </ContentView>
+                                </DataTemplate>
+                            </CollectionView.ItemTemplate>
+                        </CollectionView>
+                    </StackLayout>
+                </StackLayout>
+                </StackLayout>
+            </ScrollView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

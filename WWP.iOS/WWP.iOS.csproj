@@ -156,6 +156,9 @@
     <PackageReference Include="Plugin.MediaManager.Forms">
       <Version>1.0.9</Version>
     </PackageReference>
+    <PackageReference Include="Xam.Plugin.Media">
+      <Version>5.0.1</Version>
+    </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
@@ -213,5 +216,11 @@
     <BundleResource Include="Resources\call.png" />
     <BundleResource Include="Resources\text.png" />
     <BundleResource Include="Resources\openedMenu.png" />
+    <BundleResource Include="Resources\backButtonIcon.png" />
+    <BundleResource Include="Resources\callButtonIcon.png" />
+    <BundleResource Include="Resources\menuButtonIcon.png" />
+    <BundleResource Include="Resources\messageButtonIcon.png" />
+    <BundleResource Include="Resources\walkiePhoto.png" />
+    <BundleResource Include="Resources\cameraIcon.png" />
   </ItemGroup>
 </Project>

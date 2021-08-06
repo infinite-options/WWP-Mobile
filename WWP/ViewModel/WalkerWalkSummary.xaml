@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="WWP.ViewModel.WalkerWalkSummary"
+    NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="70"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <FlexLayout Grid.Row="0" JustifyContent="SpaceBetween">
+                <StackLayout HeightRequest="70" WidthRequest="80">
+                    <StackLayout VerticalOptions="CenterAndExpand">
+                        <ImageButton HeightRequest="20" Margin="20,0,0,0" Source="backButtonIcon"></ImageButton>
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout HeightRequest="70" WidthRequest="80">
+                    <StackLayout VerticalOptions="CenterAndExpand">
+                        <ImageButton HeightRequest="18" Margin="20,0,0,0" Source="menuButtonIcon"></ImageButton>
+                    </StackLayout>
+                </StackLayout>
+            </FlexLayout>
+            <StackLayout Grid.Row="1" Spacing="20">
+                <StackLayout HorizontalOptions="Center">
+                    <Label Text="Walk Summary" TextColor="Black" FontSize="24"></Label>
+                </StackLayout>
+                <StackLayout Padding="0,0,0,0" Spacing="10">
+                    <Label HorizontalOptions="Center" FontSize="18" FontAttributes="Bold">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="Your walk with " TextColor="Black"/>
+                                <Span Text="David" x:Name="walkie" TextColor="#F87F1B"/>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                    <Frame HorizontalOptions="Center" HasShadow="False" WidthRequest="92" HeightRequest="92" Padding="0" CornerRadius="20" IsClippedToBounds="True">
+                        <Image Source="walkiePhoto" Aspect="Fill" x:Name="walkiePicture"></Image>
+                    </Frame>
+                    <StackLayout>
+                        <Label HorizontalOptions="Center" FontSize="18" FontAttributes="Bold" Text="Is schedule for" TextColor="Black"></Label>
+                        <Label HorizontalOptions="Center" FontSize="18" FontAttributes="Bold" Text="June 23, 2021 at 1:00 PM" TextColor="#F87F1B" x:Name="walkDate"></Label>
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout>
+                    <Label HorizontalOptions="Center" FontSize="18" FontAttributes="Bold" Text="Meet him at" TextColor="Black"></Label>
+                    <Label HorizontalOptions="Center" FontSize="18" FontAttributes="Bold" Text="200 Ashland Avenue," TextColor="#F87F1B" x:Name="address1"></Label>
+                    <Label HorizontalOptions="Center" FontSize="18" FontAttributes="Bold" Text="Santa Monica CA 94405" TextColor="#F87F1B" x:Name="address2"></Label>
+                </StackLayout>
+                <BoxView Margin="20,0,20,0" HeightRequest="0.5" Color="#F87F1B"></BoxView>
+                <Button Margin="90,0,90,0" Text="Prepare for Walk" Clicked="NavigateToWalkerPrepPage" HeightRequest="35" FontAttributes="Bold" TextColor="White" CornerRadius="15" BackgroundColor="#F87F1B"></Button>
+                <StackLayout>
+                    <StackLayout HorizontalOptions="Center" HeightRequest="150" WidthRequest="150">
+                        <RelativeLayout HeightRequest="150" WidthRequest="150">
+                            <Ellipse HeightRequest="150" WidthRequest="150" Fill="#F87F1B" StrokeThickness="0"></Ellipse>
+                            <StackLayout HeightRequest="150" WidthRequest="150">
+                                <StackLayout HorizontalOptions="Center" VerticalOptions="CenterAndExpand">
+                                    <Label Text="Start Walk" TextColor="White" FontSize="24">
+                                        <Label.GestureRecognizers>
+                                            <TapGestureRecognizer Tapped="NavigateToWalkerTimer"></TapGestureRecognizer>
+                                        </Label.GestureRecognizers>
+                                    </Label>
+                                </StackLayout>
+                            </StackLayout>
+                        </RelativeLayout>
+                    </StackLayout>
+                </StackLayout>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

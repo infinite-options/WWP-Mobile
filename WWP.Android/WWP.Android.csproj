@@ -137,6 +137,9 @@
     <PackageReference Include="Plugin.MediaManager.Forms">
       <Version>1.0.9</Version>
     </PackageReference>
+    <PackageReference Include="Xam.Plugin.Media">
+      <Version>5.0.1</Version>
+    </PackageReference>
   </ItemGroup>
   <ItemGroup>
   </ItemGroup>

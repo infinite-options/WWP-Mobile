@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="WWP.ViewModel.SchedulePage"
+    NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+         <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="70"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <FlexLayout Grid.Row="0" JustifyContent="SpaceBetween">
+                <Button Margin="20,0,0,0" Text="Back" TextColor="#F87F1B" Clicked="NavigateBack"></Button>
+                <Button Margin="0,0,20,0" Text="Menu" TextColor="#F87F1B"></Button>
+            </FlexLayout>
+            <StackLayout Grid.Row="1" Spacing="15">
+                <Label Margin="20,0,20,0" Text="Select the days and then enter time slots for those days" FontSize="24" TextColor="Black" HorizontalTextAlignment="Center"></Label>
+                <Frame  Margin="0,5,0,0" Padding="0" CornerRadius="20" HasShadow="False" BackgroundColor="#FFF2EA" >
+                <ScrollView>
+                    <StackLayout>
+                        <StackLayout>
+                        <CollectionView x:Name="scheduleView" Margin="0,25,0,0">
+                            <CollectionView.ItemTemplate>
+                                <DataTemplate>
+                                    <StackLayout>
+                                     
+                                    <StackLayout Margin="0,0,0,0" Orientation="Horizontal" HorizontalOptions="CenterAndExpand" HeightRequest="40">
+                            <Frame CornerRadius="20" Padding="10" WidthRequest="80" HasShadow="False" BorderColor="{Binding colorValue}">
+                                <StackLayout>
+                                    <Label Text="{Binding day}" VerticalOptions="CenterAndExpand" FontSize="12" FontAttributes="Bold" HorizontalOptions="Center"></Label>
+                                </StackLayout>
+                                <Frame.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="SelectDay" CommandParameter="{Binding .}"></TapGestureRecognizer>
+                                </Frame.GestureRecognizers>
+                            </Frame>
+                            <StackLayout Margin="2,0,0,0" Orientation="Horizontal" IsEnabled="{Binding isEnabledValue}" Opacity="{Binding opacityValue}">
+                                <Frame CornerRadius="20" Padding="0" WidthRequest="100" HasShadow="False" BorderColor="Black">
+                                    <StackLayout HorizontalOptions="Start" Margin="5,0,0,0" VerticalOptions="Center" Orientation="Horizontal" Spacing="0">
+                                        <CollectionView ItemsSource="{Binding startHour}" ClassId="{Binding row}" HeightRequest="20" WidthRequest="25" VerticalScrollBarVisibility="Never" Scrolled="hourListStart_Scrolled" >
+                                            <CollectionView.ItemTemplate>
+                                                <DataTemplate>
+                                                    <Label Text="{Binding hour}"   HorizontalTextAlignment="Center"></Label>
+                                                </DataTemplate>
+                                            </CollectionView.ItemTemplate>
+                                        </CollectionView>
+                                        <Label Text=":"></Label>
+                                        <CollectionView ItemsSource="{Binding startMinute}"  ClassId="{Binding row}" HeightRequest="20" WidthRequest="25" VerticalScrollBarVisibility="Never" Scrolled="minuteListStart_Scrolled" >
+                                            <CollectionView.ItemTemplate>
+                                                <DataTemplate>
+                                                    <Label Text="{Binding minute}"></Label>
+                                                </DataTemplate>
+                                            </CollectionView.ItemTemplate>
+                                        </CollectionView>
+                                        <CollectionView ItemsSource="{Binding startTime}"  ClassId="{Binding row}" HeightRequest="20" WidthRequest="30" VerticalScrollBarVisibility="Never" Scrolled="timeListStart_Scrolled" >
+                                            <CollectionView.ItemTemplate>
+                                                <DataTemplate>
+                                                    <Label Text="{Binding time}"></Label>
+                                                </DataTemplate>
+                                            </CollectionView.ItemTemplate>
+                                        </CollectionView>
+                                    </StackLayout>
+                                 
+
+                                </Frame>
+                                <Label Text="to" FontAttributes="Bold" VerticalTextAlignment="Center" FontSize="12" ></Label>
+                                <Frame CornerRadius="20" Padding="0" WidthRequest="100" HasShadow="False" BorderColor="Black">
+                                    <StackLayout HorizontalOptions="Start" Margin="5,0,0,0" VerticalOptions="Center" Orientation="Horizontal" Spacing="0">
+                                        <CollectionView ItemsSource="{Binding endHour}"  ClassId="{Binding row}"  HeightRequest="20" WidthRequest="25" VerticalScrollBarVisibility="Never" Scrolled="hourListEnd_Scrolled" >
+                                            <CollectionView.ItemTemplate>
+                                                <DataTemplate>
+                                                    <Label Text="{Binding hour}" HorizontalTextAlignment="Center"></Label>
+                                                </DataTemplate>
+                                            </CollectionView.ItemTemplate>
+                                        </CollectionView>
+                                        <Label Text=":"></Label>
+                                        <CollectionView ItemsSource="{Binding endMinute}" ClassId="{Binding row}" HeightRequest="20" WidthRequest="25" VerticalScrollBarVisibility="Never" Scrolled="minuteListEnd_Scrolled" >
+                                            <CollectionView.ItemTemplate>
+                                                <DataTemplate>
+                                                    <Label Text="{Binding minute}"></Label>
+                                                </DataTemplate>
+                                            </CollectionView.ItemTemplate>
+                                        </CollectionView>
+                                        <CollectionView ItemsSource="{Binding endTime}" ClassId="{Binding row}" HeightRequest="20" WidthRequest="30" VerticalScrollBarVisibility="Never" Scrolled="timeListEnd_Scrolled" >
+                                            <CollectionView.ItemTemplate>
+                                                <DataTemplate>
+                                                    <Label Text="{Binding time}"></Label>
+                                                </DataTemplate>
+                                            </CollectionView.ItemTemplate>
+                                        </CollectionView>
+                                    </StackLayout>
+                                </Frame>
+                                <StackLayout.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="GetDay" CommandParameter="{Binding .}"></TapGestureRecognizer>
+                                </StackLayout.GestureRecognizers>
+                            </StackLayout>
+                        </StackLayout>
+                                    <StackLayout HeightRequest="0"></StackLayout>
+                                    </StackLayout>
+                                
+                                </DataTemplate>
+                            </CollectionView.ItemTemplate>
+                        </CollectionView>
+                        </StackLayout>
+                        <StackLayout Margin="0,-20,0,20">
+                            <Button Margin="40,0,40,0" CornerRadius="20" Text="Add another availability +" TextColor="White" FontSize="14" FontAttributes="Bold" BackgroundColor="#F87F1B" Clicked="AddAnoherTime" ></Button>
+                            <Button Margin="40,0,40,0" CornerRadius="20" Text="Next" TextColor="White" FontSize="14" FontAttributes="Bold" BackgroundColor="#F87F1B" Clicked="SubmitApplication"></Button>
+                        </StackLayout>
+                            </StackLayout>
+                </ScrollView>
+             </Frame>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

@@ -222,5 +222,8 @@
     <BundleResource Include="Resources\messageButtonIcon.png" />
     <BundleResource Include="Resources\walkiePhoto.png" />
     <BundleResource Include="Resources\cameraIcon.png" />
+    <BundleResource Include="Resources\goScheduleButton.png" />
+    <BundleResource Include="Resources\submitFeedbackButton.png" />
+    <BundleResource Include="Resources\submitReportButton.png" />
   </ItemGroup>
 </Project>

@@ -154,7 +154,7 @@
                 </Frame>
 
                 <ImageButton WidthRequest="220" BackgroundColor="Transparent" Clicked="submitClicked"
-                        HorizontalOptions="Center" Source="confirmButton.png"/>
+                        HorizontalOptions="Center" Source="submitFeedbackButton.png"/>
                 
             </StackLayout>
 

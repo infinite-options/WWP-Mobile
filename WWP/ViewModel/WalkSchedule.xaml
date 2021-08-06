@@ -22,7 +22,7 @@
 
                     <Label Text="Upcoming Walks" VerticalOptions="Center" VerticalTextAlignment="Center" FontSize="22" FontAttributes="Bold" TextColor="#F87F1B" Grid.ColumnSpan="2" HorizontalOptions="Center" HorizontalTextAlignment="Center"/> 
                     <ImageButton IsVisible="False" Source="back.png" BackgroundColor="Transparent" HorizontalOptions="Start" HeightRequest="25" Clicked="backClicked"/>
-                    <ImageButton x:Name="menu" Clicked="menuClicked" BackgroundColor="Transparent" Grid.Column="1" Source="menu.png" HorizontalOptions="End" VerticalOptions="Center" HeightRequest="25" WidthRequest="50"/>
+                    <ImageButton x:Name="menu" Clicked="menuWalkerClicked" BackgroundColor="Transparent" Grid.Column="1" Source="menu.png" HorizontalOptions="End" VerticalOptions="Center" HeightRequest="25" WidthRequest="50"/>
                 </Grid>
 
                 <!--for when there are no walks on the schedule-->
@@ -125,7 +125,7 @@
 
                 </Grid>
 
-                <Grid x:Name="openWalkieMenuGrid" Grid.RowSpan="3" IsVisible="false" Margin="0, 10, 0, 10">
+                <Grid x:Name="openWalkieMenuGrid" IsVisible="false" Grid.RowSpan="3" Margin="0, 10, 0, 10">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
@@ -164,6 +164,46 @@
 
                         <Grid HorizontalOptions="Fill" HeightRequest="33">
                             <Label Text="Emergency Contact" HorizontalTextAlignment="End" VerticalOptions="Center" FontSize="20" FontAttributes="Bold" TextColor="White"/>
+                            <Button HorizontalOptions="Fill" VerticalOptions="Fill" BackgroundColor="Transparent"/>
+                        </Grid>
+
+                        <Grid HorizontalOptions="Fill" HeightRequest="33" Margin="0,5,0,0">
+                            <Label Text="Log out" HorizontalTextAlignment="End" VerticalOptions="Center" FontSize="20" FontAttributes="Bold" TextColor="White"/>
+                            <Button HorizontalOptions="Fill" VerticalOptions="Fill" BackgroundColor="Transparent" Clicked="logoutClicked"/>
+                        </Grid>
+                    </StackLayout>
+
+            </Grid>
+
+                <Grid x:Name="openWalkerMenuGrid" Grid.RowSpan="3" IsVisible="false" Margin="0, 10, 0, 10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+
+                    <!--<ImageButton IsVisible="false" Source="back.png" BackgroundColor="Transparent" HorizontalOptions="Start" VerticalOptions="End" HeightRequest="25" Clicked="backClicked"/>-->
+
+                    <ImageButton CornerRadius="0" Margin="20,0,30,0" x:Name="openedMenuWalker" Grid.Column="1" Source="openedMenu.png" HorizontalOptions="End" VerticalOptions="End" HeightRequest="25" Clicked="openMenuWalkerClicked"/>
+
+                    <BoxView CornerRadius="0" BackgroundColor="#F87F1B" Grid.Row="1" Grid.ColumnSpan="2" HorizontalOptions="Fill" HeightRequest="215"/>
+
+                    <StackLayout Grid.Row="1" Grid.ColumnSpan="2" Margin="0,0,15,0" VerticalOptions="Center">
+                        <Grid HorizontalOptions="Fill" HeightRequest="33">
+                            <Label Text="My Schedule" HorizontalTextAlignment="End" VerticalOptions="Center" FontSize="20" FontAttributes="Bold" TextColor="White"/>
+                            <Button HorizontalOptions="Fill" VerticalOptions="Fill" BackgroundColor="Transparent" Clicked="upcomingClicked"/>
+                        </Grid>
+
+                        <Grid HorizontalOptions="Fill" HeightRequest="33" Margin="0,5">
+                            <Label Text="Profile / Account" HorizontalTextAlignment="End" VerticalOptions="Center" FontSize="20" FontAttributes="Bold" TextColor="White"/>
+                            <Button HorizontalOptions="Fill" VerticalOptions="Fill" BackgroundColor="Transparent" Clicked="profileClicked"/>
+                        </Grid>
+
+                        <Grid HorizontalOptions="Fill" HeightRequest="33">
+                            <Label Text="Customer Support" HorizontalTextAlignment="End" VerticalOptions="Center" FontSize="20" FontAttributes="Bold" TextColor="White"/>
                             <Button HorizontalOptions="Fill" VerticalOptions="Fill" BackgroundColor="Transparent"/>
                         </Grid>
 

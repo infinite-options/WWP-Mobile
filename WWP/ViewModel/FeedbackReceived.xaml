@@ -23,11 +23,21 @@
 
                 <Label FontSize="24" HorizontalOptions="Center" HorizontalTextAlignment="Center" Text="Feedback Received" Margin="0, 20,0,130"/>
 
-                <Label FontSize="24" HorizontalOptions="Center" HorizontalTextAlignment="Center" TextColor="#F87F1B"
+                <!--show for walkie-->
+                <Label x:Name="walkieText" IsVisible="true" FontSize="24" HorizontalOptions="Center" HorizontalTextAlignment="Center" TextColor="#F87F1B"
                        Text="Thank you so much&#10;for sharing your&#10;feedback with us!" FontAttributes="Bold" Margin="0,0,0,130"/>
 
-                <ImageButton Margin="60,0" BackgroundColor="Transparent" Clicked="seeClicked"
+                <ImageButton x:Name="walkieButton" IsVisible="true" Margin="60,0" BackgroundColor="Transparent" Clicked="seeClicked"
                         HorizontalOptions="Center" Source="seeScheduleButton.png"/>
+                <!--end for walkie-->
+
+                <!--show for walker-->
+                <Label x:Name="walkerText" IsVisible="false" FontSize="24" HorizontalOptions="Center" HorizontalTextAlignment="Center" TextColor="#F87F1B"
+                       Text="Thank you so much&#10;for sharing your&#10;report with us!" FontAttributes="Bold" Margin="0,0,0,130"/>
+
+                <ImageButton x:Name="walkerButton" IsVisible="false" Margin="60,0" BackgroundColor="Transparent" Clicked="seeClicked"
+                        HorizontalOptions="Center" Source="goScheduleButton.png"/>
+                <!--end for walker-->
 
             </StackLayout>
 

@@ -123,5 +123,30 @@ namespace WWP.ViewModel
             Navigation.PushAsync(new MainLogin());
         }
         //end walkie menu functions
+
+
+        //walker menu functions
+        void menuWalkerClicked(object sender, EventArgs e)
+        {
+            menu.IsVisible = false;
+            openWalkerMenuGrid.IsVisible = true;
+        }
+
+        void openMenuWalkerClicked(object sender, EventArgs e)
+        {
+            menu.IsVisible = true;
+            openWalkerMenuGrid.IsVisible = false;
+        }
+
+        void profileWalkerClicked(object sender, EventArgs e)
+        {
+            //Navigation.PushAsync(new WalkSchedule());
+        }
+
+        void logoutWalkerClicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new MainLogin());
+        }
+        //end walker menu functions
     }
 }

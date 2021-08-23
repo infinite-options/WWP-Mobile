@@ -11,6 +11,8 @@ namespace WWP.ViewModel
     {
         ObservableCollection<Appointment> scheduleColl = new ObservableCollection<Appointment>();
 
+        public static string option = "";
+
         public WalkSchedule()
         {
             //if there are walks scheduled, show the schedule collection view, or else show the noWalksStack
@@ -86,6 +88,8 @@ namespace WWP.ViewModel
 
         void buddyClicked(object sender, EventArgs e)
         {
+            option = "pick_a_buddy";
+
             Navigation.PushAsync(new PickABuddy());
             //Application.Current.MainPage = new ProfileSummary();
         }
@@ -148,5 +152,10 @@ namespace WWP.ViewModel
             Navigation.PushAsync(new MainLogin());
         }
         //end walker menu functions
+        void NavigateToPickWalkCalendar(System.Object sender, System.EventArgs e)
+        {
+            option = "pick_a_date";
+            Navigation.PushAsync(new PickWalkCalendarPage(), false);
+        }        
     }
 }

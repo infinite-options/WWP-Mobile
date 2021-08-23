@@ -6,7 +6,7 @@ using WWP.Model.Login.LoginClasses;
 using System.Threading.Tasks;
 using System.Net.Http;
 using System.Text;
-using WWP.Constants;
+using WWP.Model.Login.Constants;
 using Newtonsoft.Json;
 using System.Diagnostics;
 using Newtonsoft.Json.Linq;

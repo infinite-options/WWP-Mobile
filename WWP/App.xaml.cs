@@ -2,7 +2,7 @@
 using Xamarin.Forms;
 using Xamarin.Essentials;
 using WWP.Model.Login.LoginClasses.Apple;
-using WWP.Constants;
+using WWP.Model.Login.Constants;
 using System.Collections.ObjectModel;
 using System.Runtime.CompilerServices;
 using Xamarin.Forms.Xaml;

@@ -16,7 +16,7 @@ using System.Diagnostics;
 using System.Xml.Linq;
 using System.Net;
 using Xamarin.Forms.Maps;
-using WWP.Constants;
+using WWP.Model.Login.Constants;
 using System.Security.Cryptography;
 using PayPalCheckoutSdk.Core;
 using PayPalHttp;

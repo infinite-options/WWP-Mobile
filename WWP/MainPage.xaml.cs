@@ -25,7 +25,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using WWP.Model.Login.LoginClasses.Apple;
 using WWP.Model.Login.LoginClasses;
-using WWP.Constants;
+using WWP.Model.Login.Constants;
 using WWP.LogInClasses;
 using Newtonsoft.Json.Linq;
 using WWP.Model;

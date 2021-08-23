@@ -14,7 +14,7 @@ namespace WWP.ViewModel
 
         void NavigateToWalkerPrepPage(System.Object sender, System.EventArgs e)
         {
-            Navigation.PushAsync(new WalkerPrepPage(), false);
+            Navigation.PushAsync(new PickWalkCalendarPage(), false);
         }
     }
 }

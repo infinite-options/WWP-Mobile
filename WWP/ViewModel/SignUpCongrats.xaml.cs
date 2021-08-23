@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Xamarin.Essentials;
 using Xamarin.Forms;
-
+using static WWP.ViewModel.SignUpOptions;
 namespace WWP.ViewModel
 {
     public partial class SignUpCongrats : ContentPage
@@ -20,8 +20,14 @@ namespace WWP.ViewModel
 
         void setUpClicked(object sender, EventArgs e)
         {
-            Application.Current.MainPage = new NavigationPage(new WalkieProfile());
+            if(flow == "walkie")
+            {
+                Application.Current.MainPage = new NavigationPage(new WalkieProfile());
+            }
+            else if (flow == "walker")
+            {
+                Application.Current.MainPage = new NavigationPage(new SchedulePage());
+            }
         }
-
     }
 }

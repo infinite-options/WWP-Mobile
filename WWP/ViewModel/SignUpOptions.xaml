@@ -25,14 +25,14 @@
                     <BoxView HeightRequest="150" Margin="40,0" CornerRadius="20" BackgroundColor="#F87F1B"/>
                     <Label Text="Are you looking for&#10;scheduling walks with a&#10;walk buddy?" FontSize="24" TextColor="White"
                            HorizontalTextAlignment="Center" VerticalOptions="Center" VerticalTextAlignment="Center"/>
-                    <Button BackgroundColor="Transparent" Clicked="signUpClicked" HorizontalOptions="Fill" VerticalOptions="Fill"/>
+                    <Button BackgroundColor="Transparent" Clicked="WalkieFlow" HorizontalOptions="Fill" VerticalOptions="Fill"/>
                 </Grid>
 
                 <Grid HorizontalOptions="Center" Margin="40,20,40,50">
                     <BoxView HeightRequest="150" WidthRequest="346" CornerRadius="20" BackgroundColor="#F87F1B"/>
                     <Label Text="Are you looking to&#10;yourself be a walk buddy&#10;to seniors?" FontSize="24" TextColor="White"
                            HorizontalTextAlignment="Center" VerticalOptions="Center" VerticalTextAlignment="Center"/>
-                    <Button BackgroundColor="Transparent" Clicked="signUpClicked" HorizontalOptions="Fill" VerticalOptions="Fill"/>
+                    <Button BackgroundColor="Transparent" Clicked="WalkerFlow" HorizontalOptions="Fill" VerticalOptions="Fill"/>
                 </Grid>
 
                 <Image Margin="50,50,50,0" Source="mainBackground.png" VerticalOptions="End" HorizontalOptions="Fill"/>

@@ -447,7 +447,7 @@ namespace WWP.ViewModel
             //    Debug.WriteLine("contentString: " + contentString);
             //    return true;
             //}
-            return false;
+            return true;
         }
 
         async void SubmitApplication(System.Object sender, System.EventArgs e)
@@ -479,8 +479,9 @@ namespace WWP.ViewModel
                     if (result)
                     {
                         //UserDialogs.Instance.HideLoading();
-                        await DisplayAlert("Congratulations!", "Your application is in process. We will notify you of your result via email.", "OK");
+                        //await DisplayAlert("Congratulations!", "Your application is in process. We will notify you of your result via email.", "OK");
                         //Application.Current.MainPage = new LogInPage();
+                        await Navigation.PushAsync(new WalkieProfile());
                     }
                     else
                     {
@@ -527,7 +528,7 @@ namespace WWP.ViewModel
 
             if (selected.colorValue == Color.Black)
             {
-                selected.updateColorValue = Color.Red;
+                selected.updateColorValue = Color.FromHex("#F87F1B");
                 selected.updateIsEnabledValue = true;
                 selected.updateOpacityValue = 1;
 
@@ -553,6 +554,28 @@ namespace WWP.ViewModel
                 {
                     selectedSchedule[selected.day].RemoveAt(position.row);
                 }
+            }
+
+            var zeroDatesSelected = true;
+
+            foreach(Schedule element in scheduleSource)
+            {
+                if(element.colorValue == Color.FromHex("#F87F1B"))
+                {
+                    zeroDatesSelected = false;
+                    break;
+                }
+            }
+
+            if (zeroDatesSelected)
+            {
+                addMoreTimesAndNextButtonSection.IsVisible = false;
+                zeroDates.IsVisible = true;
+            }
+            else
+            {
+                addMoreTimesAndNextButtonSection.IsVisible = true;
+                zeroDates.IsVisible = false;
             }
         }
 

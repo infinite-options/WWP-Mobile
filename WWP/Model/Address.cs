@@ -5,7 +5,7 @@ using System.Net.Http;
 using Newtonsoft.Json;
 using System.Threading.Tasks;
 using System.Threading;
-using WWP.Constants;
+using WWP.Model.Login.Constants;
 using System.ComponentModel;
 using Xamarin.Forms;
 using System.Diagnostics;

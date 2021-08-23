@@ -4,7 +4,7 @@ using System.Collections.ObjectModel;
 using WWP.Model;
 using Xamarin.Essentials;
 using Xamarin.Forms;
-
+using static WWP.ViewModel.WalkSchedule;
 namespace WWP.ViewModel
 {
     public partial class ConfirmBuddy : ContentPage
@@ -24,6 +24,20 @@ namespace WWP.ViewModel
 
             hobbyCollView.HeightRequest = 80 * ((hobbiesObsColl.Count / 3) + 1);
             hobbyCollView.ItemsSource = hobbiesObsColl;
+
+            SetConfirmButtonText(comfirmButton);
+        }
+
+        public void SetConfirmButtonText(Button comfirmButton)
+        {
+            if(option == "pick_a_buddy")
+            {
+                comfirmButton.Text = "Schedule Walk";
+            }
+            else if (option == "pick_a_date")
+            {
+                comfirmButton.Text = "Confirm";
+            }
         }
 
         void backClicked(object sender, EventArgs e)
@@ -34,8 +48,17 @@ namespace WWP.ViewModel
 
         void confirmClicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new WalkSummary());
-            //Application.Current.MainPage = new ProfileSummary();
+            var s = (Button)sender;
+
+            if(s.Text == "Schedule Walk")
+            {
+                Navigation.PushAsync(new PickWalkCalendarPage());
+            }
+            else if (s.Text == "Confirm")
+            {
+                Navigation.PushAsync(new WalkSummary());
+            }
+           
         }
 
         //walkie menu functions

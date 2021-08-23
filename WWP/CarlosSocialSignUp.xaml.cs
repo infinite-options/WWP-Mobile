@@ -7,7 +7,7 @@ using System.Net;
 using System.Net.Http;
 using System.Text;
 using System.Xml.Linq;
-using WWP.Constants;
+using WWP.Model.Login.Constants;
 using WWP.Model;
 using WWP.Model.Login.LoginClasses;
 using WWP.ViewModel;

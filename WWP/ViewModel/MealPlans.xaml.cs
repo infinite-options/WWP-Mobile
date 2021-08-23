@@ -1,4 +1,4 @@
-﻿using WWP.Constants;
+﻿using WWP.Model.Login.Constants;
 using WWP.Model;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;

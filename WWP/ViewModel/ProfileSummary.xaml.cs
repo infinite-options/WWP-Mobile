@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using WWP.Model;
 using Xamarin.Essentials;
 using Xamarin.Forms;
+using static WWP.ViewModel.SignUpOptions;
 
 namespace WWP.ViewModel
 {
@@ -32,7 +33,15 @@ namespace WWP.ViewModel
 
         void startClicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new WalkSchedule());
+            if(flow == "walker")
+            {
+                Navigation.PushAsync(new CalendarPage());
+            }
+            else if (flow == "walkie")
+            {
+                Navigation.PushAsync(new WalkSchedule());
+            }
+            
             //Application.Current.MainPage = new WalkSchedule();
         }
 

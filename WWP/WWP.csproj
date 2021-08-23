@@ -52,7 +52,6 @@
     <Folder Include="Model\Login\Constants\" />
     <Folder Include="Model\Login\LoginClasses\Apple\" />
     <Folder Include="Interfaces\" />
-    <Folder Include="Constants\" />
   </ItemGroup>
 
   <ItemGroup>
@@ -73,7 +72,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Remove="Constants\" />
     <None Remove="XamForms.Controls.Calendar" />
     <None Remove="Xam.Plugin.Media" />
   </ItemGroup>

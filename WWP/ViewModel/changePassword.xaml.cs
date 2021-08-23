@@ -7,7 +7,7 @@ using WWP.Model.Login.LoginClasses;
 using WWP.Model;
 using WWP.LogInClasses;
 using System.Threading.Tasks;
-using WWP.Constants;
+using WWP.Model.Login.Constants;
 using System.Net.Http;
 using Newtonsoft.Json.Linq;
 using System.Collections.ObjectModel;

@@ -7,6 +7,7 @@ namespace WWP.ViewModel
 {
     public partial class SignUpOptions : ContentPage
     {
+        public static string flow = "";
         public SignUpOptions()
         {
             NavigationPage.SetHasBackButton(this, false);
@@ -20,8 +21,17 @@ namespace WWP.ViewModel
             InitializeComponent();
         }
 
-        void signUpClicked(object sender, EventArgs e)
+        void WalkerFlow(object sender, EventArgs e)
         {
+            flow = "walker";
+
+            Application.Current.MainPage = new SignUp();
+        }
+
+        void WalkieFlow(System.Object sender, System.EventArgs e)
+        {
+            flow = "walkie";
+
             Application.Current.MainPage = new SignUp();
         }
     }

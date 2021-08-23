@@ -5,7 +5,7 @@
     x:Class="WWP.ViewModel.ConfirmBuddy">
     <ContentPage.Content>
 
-        <ScrollView>
+        <ScrollView Margin="0,0,0,10">
             <StackLayout>
                 <BoxView x:Name="headingBuffer" HeightRequest="20"/>
             <Grid>
@@ -39,8 +39,7 @@
                     <ImageButton BackgroundColor="LightGray" HorizontalOptions="Start" WidthRequest="128" HeightRequest="128" CornerRadius="30" Grid.RowSpan="2" VerticalOptions="Fill"/>
 
                     <Label Grid.Column="1" x:Name="name" Text="John Doe" Margin="20,0,20,3" FontSize="18" FontAttributes="Bold" HorizontalOptions="Start" VerticalOptions="End"/>
-                    <Image Grid.Column="1" Source="rightArrow.png" Margin="0,0,25,0" HorizontalOptions="End" HeightRequest="25" VerticalOptions="End"/>
-
+                   
                     <Grid Grid.Column="1" Grid.Row="1" Margin="20,5,20,0" VerticalOptions="Start">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="1*"/> <ColumnDefinition Width="1*"/>
@@ -114,7 +113,8 @@
 
                 <BoxView HeightRequest="1" Margin="15,0,15,25" Color="#F87F1B" HorizontalOptions="Fill"/>
 
-                <ImageButton Source="confirmButton.png" Margin="80,10,80,50" Clicked="confirmClicked" HorizontalOptions="Center"/>
+                <!--<ImageButton Source="confirmButton.png" Margin="80,10,80,50" Clicked="confirmClicked" HorizontalOptions="Center"/>-->
+                <Button x:Name="comfirmButton" TextColor="White" Clicked="confirmClicked" BackgroundColor="#F87F1B" Margin="80,0,80,0" CornerRadius="20"></Button>
 
             </StackLayout>
 

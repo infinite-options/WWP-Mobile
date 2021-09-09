@@ -111,7 +111,7 @@ namespace WWP.Droid
 
             var notificationBuilder = new NotificationCompat.Builder(this, AppConstants.NotificationChannelName)
                 .SetContentTitle("XamarinNotify Message")
-                .SetSmallIcon(Resource.Drawable.ic_launcher)
+                .SetSmallIcon(Resource.Drawable.shopping)
                 .SetContentText(body)
                 .SetAutoCancel(true)
                 .SetShowWhen(false)

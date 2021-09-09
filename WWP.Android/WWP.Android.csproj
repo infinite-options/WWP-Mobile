@@ -32,6 +32,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
 <EmbedAssembliesIntoApk>true</EmbedAssembliesIntoApk>
+<AndroidLinkMode>None</AndroidLinkMode>
+<AndroidSupportedAbis>armeabi-v7a;arm64-v8a;x86;x86_64</AndroidSupportedAbis>
+<AndroidPackageFormat>aab</AndroidPackageFormat>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType></DebugType>
@@ -42,6 +45,7 @@
     <AndroidManagedSymbols>true</AndroidManagedSymbols>
     <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
     <AndroidLinkMode>Full</AndroidLinkMode>
+    <AndroidPackageFormat>aab</AndroidPackageFormat>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
     <DebugSymbols>true</DebugSymbols>
@@ -75,11 +79,6 @@
     <Reference Include="System.Numerics.Vectors" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2012" />
-    <PackageReference Include="Xamarin.Essentials" Version="1.6.1" />
-    <PackageReference Include="Xamarin.Forms.Maps">
-      <Version>5.0.0.2012</Version>
-    </PackageReference>
     <PackageReference Include="Xamarin.Android.Support.CustomTabs">
       <Version>28.0.0.3</Version>
     </PackageReference>
@@ -95,32 +94,14 @@
     <PackageReference Include="Xamarin.Azure.NotificationHubs.Android">
       <Version>1.1.4.1</Version>
     </PackageReference>
-    <PackageReference Include="Xamarin.Firebase.Messaging">
-      <Version>121.1.0</Version>
-    </PackageReference>
     <PackageReference Include="Xamarin.GooglePlayServices.Base">
       <Version>117.6.0</Version>
-    </PackageReference>
-    <PackageReference Include="Forms9Patch">
-      <Version>2.4.9</Version>
-    </PackageReference>
-    <PackageReference Include="Xamarin.CommunityToolkit">
-      <Version>1.1.0</Version>
-    </PackageReference>
-    <PackageReference Include="Xamarin.CommunityToolkit.Markup">
-      <Version>1.1.0</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.Forms.DropdownMenu">
       <Version>1.0.2</Version>
     </PackageReference>
-    <PackageReference Include="Rg.Plugins.Popup">
-      <Version>2.0.0.11</Version>
-    </PackageReference>
     <PackageReference Include="Xam.Plugin.LatestVersion">
       <Version>2.1.0</Version>
-    </PackageReference>
-    <PackageReference Include="Xamarin.Google.Android.DataTransport.TransportRuntime">
-      <Version>3.0.0</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.JavaX.Inject">
       <Version>1.0.0</Version>
@@ -131,14 +112,41 @@
     <PackageReference Include="System.Runtime.Serialization.Json">
       <Version>4.3.0</Version>
     </PackageReference>
-    <PackageReference Include="Xamarin.AndroidX.RecyclerView">
-      <Version>1.2.0</Version>
-    </PackageReference>
     <PackageReference Include="Plugin.MediaManager.Forms">
       <Version>1.0.9</Version>
     </PackageReference>
     <PackageReference Include="Xam.Plugin.Media">
       <Version>5.0.1</Version>
+    </PackageReference>
+    <PackageReference Include="Forms9Patch">
+      <Version>2.4.9</Version>
+    </PackageReference>
+    <PackageReference Include="Rg.Plugins.Popup">
+      <Version>2.0.0.11</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.AndroidX.RecyclerView">
+      <Version>1.2.0</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.CommunityToolkit">
+      <Version>1.1.0</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.CommunityToolkit.Markup">
+      <Version>1.1.0</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.Forms">
+      <Version>5.0.0.2012</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.Forms.Maps">
+      <Version>5.0.0.2012</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.Essentials">
+      <Version>1.6.1</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.Firebase.Messaging">
+      <Version>121.1.0</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.Google.Android.DataTransport.TransportRuntime">
+      <Version>3.0.0</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
@@ -155,6 +163,7 @@
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
     <None Include="Properties\AndroidManifest.xml" />
+    <None Include="google-services.json" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Tabbar.xml" />
@@ -182,30 +191,6 @@
       <Generator></Generator>
     </AndroidResource>
     <AndroidResource Include="Resources\raw\pulseLoadingAnim2.mp4">
-      <SubType></SubType>
-      <Generator></Generator>
-    </AndroidResource>
-    <AndroidResource Include="Resources\mipmap-hdpi\WWPIcon.png">
-      <SubType></SubType>
-      <Generator></Generator>
-    </AndroidResource>
-    <AndroidResource Include="Resources\mipmap-mdpi\WWPIcon.png">
-      <SubType></SubType>
-      <Generator></Generator>
-    </AndroidResource>
-    <AndroidResource Include="Resources\mipmap-xhdpi\WWPIcon.png">
-      <SubType></SubType>
-      <Generator></Generator>
-    </AndroidResource>
-    <AndroidResource Include="Resources\mipmap-xxxhdpi\WWPIcon.png">
-      <SubType></SubType>
-      <Generator></Generator>
-    </AndroidResource>
-    <AndroidResource Include="Resources\mipmap-xxhdpi\WWPIcon.png">
-      <SubType></SubType>
-      <Generator></Generator>
-    </AndroidResource>
-    <AndroidResource Include="Resources\drawable\WWPIconCustomize.png">
       <SubType></SubType>
       <Generator></Generator>
     </AndroidResource>
@@ -633,6 +618,26 @@
       <SubType></SubType>
       <Generator></Generator>
     </AndroidResource>
+    <AndroidResource Include="Resources\mipmap-hdpi\wwp.png">
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\mipmap-mdpi\wwp.png">
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\mipmap-xhdpi\wwp.png">
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\mipmap-xxhdpi\wwp.png">
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
+    <AndroidResource Include="Resources\mipmap-xxxhdpi\wwp.png">
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />
@@ -643,9 +648,6 @@
       <Project>{CC0C42DF-C2E8-4BB1-8E2F-AC94345DDFD9}</Project>
       <Name>WWP</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <GoogleServicesJson Include="google-services.json" />
   </ItemGroup>
  <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
  <Target Name="_RemoveMdbFiles" BeforeTargets="_Upload">

@@ -78,7 +78,7 @@ namespace WWP.ViewModel
             Attendances.Add(futureDate1);
             Attendances.Add(futureDate2);
 
-            calendar.SpecialDates = Attendances;
+            //calendar.SpecialDates = Attendances;
         }
 
         void NavigateToSchedule(System.Object sender, System.EventArgs e)

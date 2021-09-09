@@ -5,8 +5,9 @@ namespace WWP.LogInClasses
 {
     public class AccountSalt
     {
-        public string password_algorithm { get; set; }
-        public string password_salt { get; set; }
+        public string user_password_algorithm { get; set; }
+        public string user_password_salt { get; set; }
+        public string user_social_media { get; set; }
     }
 
     public class AcountSaltCredentials

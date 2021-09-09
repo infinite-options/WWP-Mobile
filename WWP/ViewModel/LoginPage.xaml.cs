@@ -205,7 +205,7 @@ namespace WWP.ViewModel
         public async Task<LogInResponse> LogInUser(string userEmail, string userPassword, AccountSalt accountSalt)
         {
                 SHA512 sHA512 = new SHA512Managed();
-                byte[] data = sHA512.ComputeHash(Encoding.UTF8.GetBytes(userPassword + accountSalt.password_salt)); // take the password and account salt to generate hash
+                byte[] data = sHA512.ComputeHash(Encoding.UTF8.GetBytes(userPassword + accountSalt.user_password_salt)); // take the password and account salt to generate hash
                 string hashedPassword = BitConverter.ToString(data).Replace("-", string.Empty).ToLower(); // convert hash to hex
 
                 LogInPost loginPostContent = new LogInPost();
@@ -215,7 +215,7 @@ namespace WWP.ViewModel
                 loginPostContent.signup_platform = "";
                 Preferences.Set("hashed_password", hashedPassword);
                 Preferences.Set("user_password", userPassword);
-                Console.WriteLine("accountSalt: " + accountSalt.password_salt);
+                Console.WriteLine("accountSalt: " + accountSalt.user_password_salt);
                 Console.WriteLine("userPassword: " + userPassword);
 
                 string loginPostContentJson = JsonConvert.SerializeObject(loginPostContent); // make orderContent into json
@@ -285,8 +285,8 @@ namespace WWP.ViewModel
                 {
                     userInformation = new AccountSalt
                     {
-                        password_algorithm = data.result[0].password_algorithm,
-                        password_salt = data.result[0].password_salt
+                        user_password_algorithm = data.result[0].user_password_algorithm,
+                        user_password_salt = data.result[0].user_password_salt
                     };
                 }
             }

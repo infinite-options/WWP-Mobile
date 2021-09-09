@@ -54,7 +54,6 @@
                             TitleLabelTextColor="#F87F1B" 
                             TitleLeftArrowTextColor="#F87F1B"
                             TitleRightArrowTextColor="#F87F1B"
-                            SelectedTextColor="Black"
                             DatesTextColorOutsideMonth="White"
                             DateClicked="SelectedDate">
                         </controls:Calendar>

@@ -2,14 +2,15 @@
 <ContentPage
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    x:Class="WWP.ViewModel.MainLogin">
+    x:Class="WWP.ViewModel.MainLogin"
+    NavigationPage.HasBackButton="False"
+    NavigationPage.HasNavigationBar="False">
 
     <ContentPage.Content>
         <ScrollView>
         <Grid>
             <StackLayout>
 
-                
                     <Label Text="Login" TextColor="#F87F1B" HorizontalOptions="Center" FontAttributes="Bold" FontSize="25" Margin="0, 40,0, 15"/>
 
                     <Grid WidthRequest="250" RowSpacing="8" HorizontalOptions="Center">
@@ -22,11 +23,11 @@
                             <ColumnDefinition Width="1*"/>
                         </Grid.ColumnDefinitions>
 
-                        <ImageButton Source="appleButton.png" HorizontalOptions="Center" Grid.Row="0" Clicked="appleLoginButtonClicked"/>
+                        <ImageButton x:Name="appleLogInButton" Source="appleButton.png" HorizontalOptions="Center" Grid.Row="0" Clicked="AppleLogInClick"/>
 
-                        <ImageButton Source="fbButton.png" HorizontalOptions="Center" Grid.Row="1" Clicked="facebookLoginButtonClicked"/>
+                        <ImageButton Source="fbButton.png" HorizontalOptions="Center" Grid.Row="1" Clicked="FacebookLogInClick"/>
 
-                        <ImageButton Source="googleButton.png" HorizontalOptions="Center" Grid.Row="2" Clicked="googleLoginButtonClicked"/>
+                        <ImageButton Source="googleButton.png" HorizontalOptions="Center" Grid.Row="2" Clicked="GoogleLogInClick"/>
 
                     </Grid>
 
@@ -38,10 +39,9 @@
                             <RowDefinition Height="Auto"/>
                         </Grid.RowDefinitions>
 
-
                         <Frame x:Name="userFrame" Padding="10,14,10,8" Margin="15,0.5,0,0.5" BackgroundColor="White" HasShadow="False"
                             BorderColor="Black" CornerRadius="27" HeightRequest="30">
-                            <Entry x:Name="loginUsername" VerticalOptions="Center" VerticalTextAlignment="Center" TextColor="Black"
+                            <Entry x:Name="loginUsername" Keyboard="Email" VerticalOptions="Center" VerticalTextAlignment="Center" TextColor="Black"
                                    FontSize="17" Placeholder="Email / Phone number" PlaceholderColor="Black" Margin="10,0,10,10"/>
 
                         </Frame>
@@ -66,7 +66,7 @@
 
                     </Grid>
 
-                    <ImageButton x:Name= "loginButton" WidthRequest="220" BackgroundColor="Transparent" Clicked="loginButtonClicked"
+                    <ImageButton x:Name= "loginButton" WidthRequest="220" BackgroundColor="Transparent" Clicked="directLogInClick"
                         HorizontalOptions="Center" Source="loginButton.png"/>
 
                     <Label Text="Don't have an account?" FontSize="14" TextDecorations="Underline" TextColor="Black"
@@ -80,7 +80,6 @@
             </StackLayout>
 
          </Grid>
-
 
      </ScrollView>
         </ContentPage.Content>

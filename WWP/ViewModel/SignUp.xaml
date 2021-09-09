@@ -21,11 +21,11 @@
                             <ColumnDefinition Width="1*"/>
                         </Grid.ColumnDefinitions>
 
-                        <ImageButton Source="appleButton.png" HorizontalOptions="Center" Grid.Row="0"/>
+                        <ImageButton Source="appleButton.png" HorizontalOptions="Center" Grid.Row="0" Clicked="continueWithApple"/>
 
-                        <ImageButton Source="fbButton.png" HorizontalOptions="Center" Grid.Row="1"/>
+                        <ImageButton Source="fbButton.png" HorizontalOptions="Center" Grid.Row="1" Clicked="ContinueWithFacebook"/>
 
-                        <ImageButton Source="googleButton.png" HorizontalOptions="Center" Grid.Row="2"/>
+                        <ImageButton Source="googleButton.png" HorizontalOptions="Center" Grid.Row="2" Clicked="ContinueWithGoogle"/>
 
                     </Grid>
 
@@ -40,41 +40,41 @@
                         </Grid.RowDefinitions>
 
 
-                        <Frame x:Name="userFrame" Padding="10,14,10,8" Margin="15,0.5,0,0.5" BackgroundColor="White" HasShadow="False"
+                        <Frame Grid.Row="0" x:Name="userFrame" Padding="10,14,10,8" Margin="15,0.5,0,0.5" BackgroundColor="White" HasShadow="False"
                             BorderColor="Black" CornerRadius="27" HeightRequest="30">
-                            <Entry x:Name="loginUsername" VerticalOptions="Center" VerticalTextAlignment="Center" TextColor="Black"
+                            <Entry x:Name="loginUsername" Keyboard="Email" VerticalOptions="Center" VerticalTextAlignment="Center" TextColor="Black"
                                    FontSize="17" Placeholder="Email / Phone number" PlaceholderColor="Black" Margin="10,0,10,10"/>
 
                         </Frame>
 
                         <Frame Grid.Row="1" x:Name="confirmUserFrame" Padding="10,14,10,8" Margin="15,0.5,0,0.5" BackgroundColor="White" HasShadow="False"
                             BorderColor="Black" CornerRadius="27" HeightRequest="30">
-                            <Entry x:Name="confirmLoginUsername" VerticalOptions="Center" VerticalTextAlignment="Center" TextColor="Black"
+                            <Entry x:Name="confirmLoginUsername" Keyboard="Email" VerticalOptions="Center" VerticalTextAlignment="Center" TextColor="Black"
                                    FontSize="17" Placeholder="Confirm Email / Phone number" PlaceholderColor="Black" Margin="10,0,10,10"/>
 
                         </Frame>
 
                         <Frame Grid.Row="2" x:Name="passFrame" Padding="10,14,10,8" Margin="15,0.5,0,0.5" BackgroundColor="White" HasShadow="False"
                             BorderColor="Black" CornerRadius="27" HeightRequest="30">
-                            <Entry x:Name="loginPassword" IsPassword="True" VerticalOptions="Center" VerticalTextAlignment="Center" TextColor="Black"
+                            <Entry x:Name="loginPassword" Keyboard="Email" VerticalOptions="Center" VerticalTextAlignment="Center" TextColor="Black"
                                    FontSize="17" Placeholder="Create Password" PlaceholderColor="Black" Margin="10,0,10,10"/>
 
                         </Frame>
 
-                        <ImageButton BackgroundColor="Transparent" Grid.Row="2" x:Name="seePassword" HorizontalOptions="End" VerticalOptions="Center"
+                        <!--<ImageButton BackgroundColor="Transparent" Grid.Row="2" x:Name="seePassword" HorizontalOptions="End" VerticalOptions="Center"
                                  HeightRequest="28" WidthRequest="28" Source="eye.png" Margin="0,0,12,0"
-                                 Aspect="AspectFit" Clicked="clickedSeePassword" />
+                                 Aspect="AspectFit" Clicked="clickedSeePassword" />-->
 
                         <Frame Grid.Row="3" x:Name="confirmPassFrame" Padding="10,14,10,8" Margin="15,0.5,0,0.5" BackgroundColor="White" HasShadow="False"
                             BorderColor="Black" CornerRadius="27" HeightRequest="30">
-                            <Entry x:Name="confirmLoginPassword" IsPassword="True" VerticalOptions="Center" VerticalTextAlignment="Center" TextColor="Black"
+                            <Entry x:Name="confirmLoginPassword" Keyboard="Email" VerticalOptions="Center" VerticalTextAlignment="Center" TextColor="Black"
                                    FontSize="17" Placeholder="Confirm Password" PlaceholderColor="Black" Margin="10,0,10,10"/>
 
                         </Frame>
 
-                        <ImageButton BackgroundColor="Transparent" Grid.Row="3" x:Name="confirmSeePassword" HorizontalOptions="End" VerticalOptions="Center"
+                        <!--<ImageButton BackgroundColor="Transparent" Grid.Row="3" x:Name="confirmSeePassword" HorizontalOptions="End" VerticalOptions="Center"
                                  HeightRequest="28" WidthRequest="28" Source="eye.png" Margin="0,0,12,0"
-                                 Aspect="AspectFit" Clicked="clickedSeePassword2" />
+                                 Aspect="AspectFit" Clicked="clickedSeePassword2" />-->
 
                     </Grid>
 

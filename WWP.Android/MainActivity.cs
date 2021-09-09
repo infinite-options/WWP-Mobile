@@ -10,10 +10,11 @@ using Android.Gms.Common;
 using Android.Util;
 using Android.Content;
 using MediaManager;
+using Acr.UserDialogs;
 
 namespace WWP.Droid
 {
-    [Activity(Label = "WWP", Icon = "@mipmap/M4ME", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation | ConfigChanges.UiMode | ConfigChanges.ScreenLayout | ConfigChanges.SmallestScreenSize)]
+    [Activity(Label = "WWP", Icon = "@mipmap/wwp", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation | ConfigChanges.UiMode | ConfigChanges.ScreenLayout | ConfigChanges.SmallestScreenSize)]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
         protected override void OnCreate(Bundle savedInstanceState)
@@ -29,7 +30,7 @@ namespace WWP.Droid
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             CrossMediaManager.Current.Init(this);
-
+            UserDialogs.Init(this);
             //forms9patch
             Forms9Patch.Droid.Settings.Initialize(this);
             LoadApplication(new App());

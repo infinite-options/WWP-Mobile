@@ -19,7 +19,7 @@ namespace WWP.Droid
     [IntentFilter(
     new[] { Intent.ActionView },
     Categories = new[] { Intent.CategoryDefault, Intent.CategoryBrowsable },
-    DataSchemes = new[] { "com.googleusercontent.apps.799054437694-5qaill0n61e2j3h1ui5hl84uih16qadg" },
+    DataSchemes = new[] { "com.googleusercontent.apps.336598290180-u6g70mc9v6vvgss9kviq7s2rni65qemr" },
     DataPath = "/oauth2redirect")]
 
     public class CustomUrlSchemeInterceptorActivity : Activity

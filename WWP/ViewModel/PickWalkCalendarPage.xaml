@@ -49,9 +49,7 @@
                             TitleLabelTextColor="#F87F1B" 
                             TitleLeftArrowTextColor="#F87F1B"
                             TitleRightArrowTextColor="#F87F1B"
-                            SelectedTextColor="White"
                             DatesTextColorOutsideMonth="White"
-                            SelectedBackgroundColor="#F87F1B"
                             DateClicked="calendar_DateClicked">
                         </controls:Calendar>
                     </StackLayout>

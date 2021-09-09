@@ -1,0 +1,166 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps" xmlns:Forms9Patch="clr-namespace:Forms9Patch;assembly=Forms9Patch"
+    x:Class="WWP.ViewModel.FoodBanksMap">
+    <ContentPage.Content>
+        <ScrollView x:Name="scroller">
+            <StackLayout>
+                <BoxView x:Name="headingBuffer" HeightRequest="20"/>
+            <Grid>
+            <StackLayout>
+                <!--<BoxView x:Name="headingBuffer" HeightRequest="20"/>-->
+
+                <Grid x:Name="headerGrid" Margin="20, 0, 20, 10" HeightRequest="40">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <ImageButton Source="back.png" BackgroundColor="Transparent" HorizontalOptions="Start" HeightRequest="25" Clicked="backClicked"/>
+                    <ImageButton x:Name="menu" Grid.Column="1" Source="menu.png" HorizontalOptions="End" VerticalOptions="Center" HeightRequest="25" WidthRequest="50" Clicked="menuClicked"/>
+                    <BoxView x:Name="whiteCover" IsVisible="false" BackgroundColor="White" HorizontalOptions="Fill" VerticalOptions="Fill" Grid.Column="0" Grid.ColumnSpan="2"/>
+                </Grid>
+                <!--<Frame x:Name="mapFrame" HasShadow="False" BackgroundColor="Gray" Padding="0" HeightRequest="500" VerticalOptions="Center" Margin="20, 50" CornerRadius="10">-->
+                    <maps:Map
+                        x:Name="map2"
+                        IsVisible="true"
+                        HasZoomEnabled="True"
+                        HeightRequest="550"
+                        Margin="0,0,0,50">
+                    </maps:Map>
+                <!--</Frame>-->
+
+                <Grid Margin="0, -100, 0, 0">
+                    <BoxView CornerRadius="50" BackgroundColor="White" HorizontalOptions="Fill" VerticalOptions="Fill"/>
+
+                    <StackLayout>
+                        <BoxView HorizontalOptions="Center" WidthRequest="100" HeightRequest="5" CornerRadius="2.3"
+                                 Margin="0,10,0,10" BackgroundColor="#E7404A" VerticalOptions="Start"/>
+
+                        <Label Text="Food Banks near you" TextColor="Black" FontAttributes="Bold" FontSize="15" HorizontalOptions="Center" VerticalOptions="Start"/>
+
+                  <CollectionView x:Name="foodBanksColl" Margin="15,0">
+                    <CollectionView.ItemsLayout>
+                        <GridItemsLayout
+                        Orientation="Vertical"
+                        Span="1"
+                        VerticalItemSpacing="8"/>
+                    </CollectionView.ItemsLayout>
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+
+                          <Forms9Patch:Frame HeightRequest="120" BorderRadius="34" HasShadow="True" BackgroundColor="White" Padding="10,10,0,10">
+                                    
+                            <Grid Padding="0" ColumnSpacing="10">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="1*" />
+                                    <ColumnDefinition Width="2*" />
+                                    <ColumnDefinition Width="1*" />
+                                </Grid.ColumnDefinitions>
+
+                                <ImageButton Grid.Column="0" BackgroundColor="LightGray" WidthRequest="85" HeightRequest="85" CornerRadius="42"
+                                             HorizontalOptions="Center" VerticalOptions="Center"/>    
+
+                                <StackLayout Grid.Column="1" HorizontalOptions="Start" Margin="0,10,0,0">
+                                    <Label x:Name="name" Text="{Binding name}" FontAttributes="Bold" FontSize="15" TextColor="Black" HorizontalOptions="Start"/>
+                                    <Label x:Name="distance" Text="{Binding distance}" FontSize="14" TextColor="Black" HorizontalOptions="Start"/>
+                                </StackLayout>    
+
+                                <Grid Grid.Column="2" VerticalOptions="Fill" HorizontalOptions="End" Margin="0,0,-5,0">
+                                    <Image Source="tallOval.png"/>
+                                    <Image Source="rightArrow.png" Margin="20,0"/> 
+                                </Grid>
+
+                            </Grid>
+                            </Forms9Patch:Frame>
+
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+
+                    </StackLayout>
+                </Grid>
+
+                <!--<Button Text="Food Bank 1" HorizontalOptions="Fill" HeightRequest="50" VerticalOptions="Center" Margin="10" Clicked="clickedFbGeneral"/>
+                <Button Text="Food Bank 2" HorizontalOptions="Fill" HeightRequest="50" VerticalOptions="Center" Margin="10" Clicked="clickedFbGeneral"/>
+                <Button Text="Food Bank 3" HorizontalOptions="Fill" HeightRequest="50" VerticalOptions="Center" Margin="10" Clicked="clickedFbGeneral"/>-->
+
+            </StackLayout>
+
+            <!--guest menu-->
+            <Grid x:Name="openMenuGrid" IsVisible="false" Margin="20, 0, 20, 10" HeightRequest="40">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+
+                    
+
+                    <ImageButton IsVisible="false" Source="back.png" BackgroundColor="Transparent" HorizontalOptions="Start" VerticalOptions="End" HeightRequest="25" Clicked="backClicked"/>
+                    <!--<ImageButton CornerRadius="0" x:Name="openedMenu" Grid.Column="1" Source="openedMenu.png" HorizontalOptions="End" VerticalOptions="Center" HeightRequest="40" WidthRequest="30" Clicked="openedMenuClicked"/>-->
+                    <ImageButton Margin="0,0,15,0" CornerRadius="0" x:Name="openedMenu" Grid.Column="1" Source="openedMenu.png" HorizontalOptions="End" VerticalOptions="Center" HeightRequest="25" Clicked="openedMenuClicked"/>
+
+                    <Image x:Name="menuBackground" Source="guestMenuBackground.png" HeightRequest="250" VerticalOptions="Start" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" HorizontalOptions="End"/>
+                    <StackLayout x:Name="openGridStack" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" VerticalOptions="Start" HorizontalOptions="End" Margin="0,0,40,0" Padding="0,25">
+                        <Grid ColumnSpacing="10">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="32"/>
+                                <ColumnDefinition Width="200"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Image HeightRequest="32" Source="menuGridRed.png" HorizontalOptions="Fill" VerticalOptions="Center" BackgroundColor="Transparent"/>
+                            <Label Grid.Column="1" Text="Register" VerticalOptions="Center" FontSize="20" FontAttributes="Bold" TextColor="#E7404A" HorizontalOptions="Start"/>
+                            <Button BackgroundColor="Transparent" Grid.Column="0" Grid.ColumnSpan="2" HorizontalOptions="Fill" VerticalOptions="Fill" Clicked="registerClicked"/>
+                        </Grid>
+
+                        <Grid ColumnSpacing="10">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="32"/>
+                                <ColumnDefinition Width="200"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Image HeightRequest="32" Source="menuSearchRed.png" HorizontalOptions="Fill" VerticalOptions="Center" BackgroundColor="Transparent"/>
+                            <Label Grid.Column="1" Text="Food Banks Map" VerticalOptions="Center" FontSize="20" FontAttributes="Bold" TextColor="#E7404A" HorizontalOptions="Start"/>
+                            <Button BackgroundColor="Transparent" Grid.Column="0" Grid.ColumnSpan="2" HorizontalOptions="Fill" VerticalOptions="Fill" Clicked="browseClicked"/>
+                        </Grid>
+
+                        <Grid ColumnSpacing="10">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="32"/>
+                                <ColumnDefinition Width="200"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Image HeightRequest="32" Source="menuFAQRed.png" HorizontalOptions="Fill" VerticalOptions="Center" BackgroundColor="Transparent"/>
+                            <Label Grid.Column="1" Text="FAQs" VerticalOptions="Center" FontSize="20" FontAttributes="Bold" TextColor="#E7404A" HorizontalOptions="Start"/>
+                            <Button BackgroundColor="Transparent" Grid.Column="0" Grid.ColumnSpan="2" HorizontalOptions="Fill" VerticalOptions="Fill"/>
+                        </Grid>
+
+                        <Grid ColumnSpacing="10">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="32"/>
+                                <ColumnDefinition Width="200"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Image HeightRequest="32" Source="menuLoginRed.png" HorizontalOptions="Fill" VerticalOptions="Center" BackgroundColor="Transparent"/>
+                            <Label Grid.Column="1" Text="Login" VerticalOptions="Center" FontSize="20" FontAttributes="Bold" TextColor="#E7404A" HorizontalOptions="Start"/>
+                            <Button BackgroundColor="Transparent" Grid.Column="0" Grid.ColumnSpan="2" HorizontalOptions="Fill" VerticalOptions="Fill" Clicked="loginClicked"/>
+                        </Grid>
+
+                    </StackLayout>
+
+            </Grid>
+
+                </Grid>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

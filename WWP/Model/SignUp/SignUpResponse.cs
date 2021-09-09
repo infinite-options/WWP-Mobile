@@ -7,23 +7,21 @@ namespace WWP.Model.SignUp
 {
     public class SignUpResponse
     {
+        public string message { get; set; }
+        public int code { get; set; }
+        public SignUpResult result { get; set; }
+        public string sql { get; set; }
+    }
 
-        // response from api when user signs up
-        // link: https://uavi7wugua.execute-api.us-west-1.amazonaws.com/dev/api/v2/signup
-
-        [JsonProperty("message")]
-        public string Message { get; set; }
-
-        [JsonProperty("code")]
-        public long Code { get; set; }
-
-        [JsonProperty("first_name")]
-        public string FirstName { get; set; }
-
-        [JsonProperty("user_uid")]
-        public string UserUId { get; set; }
-
-        [JsonProperty("result")]
-        public string Result { get; set; }
+    public class SignUpResult
+    {
+        public string first_name { get; set; }
+        public string last_name { get; set; }
+        public string user_uid { get; set; }
+        public string user_access_token { get; set; }
+        public string user_refresh_token { get; set; }
+        public string mobile_access_token { get; set; }
+        public string mobile_refresh_token { get; set; }
+        public string user_social_media_id { get; set; }
     }
 }

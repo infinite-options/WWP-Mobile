@@ -1,9 +1,10 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFramework>netstandard2.1</TargetFramework>
     <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
-    <Platforms>AnyCPU;x64</Platforms>
+    <Platforms>AnyCPU</Platforms>
+    <OutputType>Library</OutputType>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -11,33 +12,31 @@
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
 
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <DebugType>portable</DebugType>
-    <DebugSymbols>true</DebugSymbols>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType></DebugType>
   </PropertyGroup>
-
   <ItemGroup>
     <!-- <PackageReference Include="Xamarin.Forms" Version="4.8.0.1269" /> -->
-    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2012" />
-    <PackageReference Include="Xamarin.Essentials" Version="1.6.1" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
-    <PackageReference Include="sqlite-net-pcl" Version="1.7.335" />
     <PackageReference Include="Xamarin.Auth" Version="1.7.0" />
-    <PackageReference Include="Xamarin.Forms.Maps" Version="5.0.0.2012" />
     <PackageReference Include="PayPalCheckoutSdk" Version="1.0.3" />
     <PackageReference Include="PayPalHttp" Version="1.0.0" />
-    <PackageReference Include="Stripe.net" Version="39.31.0" />
     <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
-    <PackageReference Include="Google.Apis.Auth" Version="1.49.0" />
-    <PackageReference Include="Forms9Patch" Version="2.4.9" />
-    <PackageReference Include="Xamarin.CommunityToolkit" Version="1.1.0" />
-    <PackageReference Include="Xamarin.CommunityToolkit.Markup" Version="1.1.0" />
     <PackageReference Include="Xamarin.Forms.DropdownMenu" Version="1.0.2" />
-    <PackageReference Include="Rg.Plugins.Popup" Version="2.0.0.11" />
     <PackageReference Include="Xam.Plugin.LatestVersion" Version="2.1.0" />
     <PackageReference Include="Plugin.MediaManager.Forms" Version="1.0.9" />
-    <PackageReference Include="XamForms.Controls.Calendar" Version="1.1.1" />
     <PackageReference Include="Xam.Plugin.Media" Version="5.0.1" />
+    <PackageReference Include="Acr.UserDialogs" Version="7.1.0.514" />
+    <PackageReference Include="Forms9Patch" Version="2.4.9" />
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2012" />
+    <PackageReference Include="Xamarin.Forms.Maps" Version="5.0.0.2012" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.6.1" />
+    <PackageReference Include="Xamarin.CommunityToolkit" Version="1.1.0" />
+    <PackageReference Include="Xamarin.CommunityToolkit.Markup" Version="1.1.0" />
+    <PackageReference Include="Rg.Plugins.Popup" Version="2.0.0.11" />
+    <PackageReference Include="sqlite-net-pcl" Version="1.7.335" />
+    <PackageReference Include="Stripe.net" Version="39.31.0" />
+    <PackageReference Include="XamForms.Controls.Calendar" Version="1.1.0" />
   </ItemGroup>
   
   <ItemGroup>
@@ -52,6 +51,7 @@
     <Folder Include="Model\Login\Constants\" />
     <Folder Include="Model\Login\LoginClasses\Apple\" />
     <Folder Include="Interfaces\" />
+    <Folder Include="ViewModel\M4ME\" />
   </ItemGroup>
 
   <ItemGroup>
@@ -59,11 +59,6 @@
     <Compile Remove="SocialSignUp.xaml.cs" />
     <Compile Remove="DirectSignUpAV.xaml.cs" />
     <Compile Remove="DirectSignUpA.xaml.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Update="ViewModel\OldLogin.xaml.cs">
-      <DependentUpon>OldLogin.xaml</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Update="ViewModel\PaymentPage.xaml">
@@ -74,5 +69,17 @@
   <ItemGroup>
     <None Remove="XamForms.Controls.Calendar" />
     <None Remove="Xam.Plugin.Media" />
+    <None Remove="ViewModel\M4ME\" />
+    <None Remove="Acr.UserDialogs" />
+    <None Remove="Xamarin.CommunityToolkit" />
+    <None Remove="Xamarin.Forms" />
+    <None Remove="Xamarin.Essentials" />
+    <None Remove="Xamarin.Forms.Maps" />
+    <None Remove="Forms9Patch" />
+    <None Remove="SkiaSharp.Views.Forms" />
+    <None Remove="Xamarin.CommunityToolkit.Markup" />
+    <None Remove="Rg.Plugins.Popup" />
+    <None Remove="sqlite-net-pcl" />
+    <None Remove="Stripe.net" />
   </ItemGroup>
 </Project>
